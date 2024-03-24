@@ -11,6 +11,7 @@ export const paths = {
     post: `/marketing/post`,
     about: '/marketing/about',
     contact: '/marketing/contact',
+    contet: '/marketing/content',
     loghome: '/marketing/loghome',
     business:'marketing/business',
     contactus:'marketing/contactus',
