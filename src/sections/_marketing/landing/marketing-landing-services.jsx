@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
-// import Iconify from 'src/components/iconify';
+import Iconify from 'src/components/iconify';
 import SvgColor from 'src/components/svg-color';
 import TextMaxLine from 'src/components/text-max-line';
 
@@ -20,30 +20,29 @@ const COLORS = ['primary', 'secondary', 'success', 'warning'];
 
 const SERVICES = [
   {
-    name: 'Scheduling',
-    icon: '/assets/icons/service/akar-icons--schedule.svg',
-    content: 'Users can specify the date and time they want the content to be published',
+    name: 'SEO',
+    icon: '/assets/icons/service/ic_service_seo.svg',
+    content: 'Nunc nonummy metus. Donec elit libero',
     path: paths.marketing.services,
   },
   {
-    name: 'Cross-Platform Posting',
-    icon: '/assets/icons/ic_marketing_bullhorn.svg',
-    content: 'Support posting on multiple social media platforms simultaneously, saving time for users managing accounts on various channels.',
+    name: 'Email Marketing',
+    icon: '/assets/icons/service/ic_service_mail.svg',
+    content: 'Nunc nonummy metus. Donec elit libero',
     path: paths.marketing.services,
   },
   {
-    name: 'Content Calendar',
-    icon: '/assets/icons/service/icon-park-outline--schedule.svg',
-    content: 'Content calendar that provides a visual overview of scheduled posts, making it easier to plan and organize content across different platforms.',
+    name: 'Search Engine Oprimization',
+    icon: '/assets/icons/service/ic_service_analysis.svg',
+    content: 'Nunc nonummy metus. Donec elit libero',
     path: paths.marketing.services,
   },
   {
-    name: 'Campaign',
-    icon: '/assets/icons/service/tabler--brand-campaignmonitor.svg',
-    content: 'Support users in executing comprehensive outreach plans by incorporating features for both email and WhatsApp campaigns on the platform.',
+    name: 'Social Marketing',
+    icon: '/assets/icons/service/ic_service_bullhorn.svg',
+    content: 'Nunc nonummy metus. Donec elit libero',
     path: paths.marketing.services,
   },
- 
 ];
 
 // ----------------------------------------------------------------------
@@ -70,9 +69,9 @@ export default function MarketingLandingServices() {
 
         <Typography variant="h2">We Provide</Typography>
 
-        {/* <Typography sx={{ color: 'text.secondary' }}>
+        <Typography sx={{ color: 'text.secondary' }}>
           Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.
-        </Typography> */}
+        </Typography>
       </Stack>
 
       <Box
@@ -142,7 +141,7 @@ function ServiceItem({ service, index }) {
           'warning'
         }
       >
-        {/* <Iconify icon="carbon:direction-straight-right" /> */}
+        <Iconify icon="carbon:direction-straight-right" />
       </IconButton>
     </Card>
   );

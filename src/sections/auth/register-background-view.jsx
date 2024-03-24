@@ -4,8 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
-// import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -69,7 +69,7 @@ export default function RegisterBackgroundView() {
   const renderHead = (
     <div>
       <Typography variant="h3" paragraph>
-        Sign Up
+        Get Started
       </Typography>
 
       <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -86,21 +86,21 @@ export default function RegisterBackgroundView() {
     </div>
   );
 
-  // const renderSocials = (
-  //   <Stack direction="row" spacing={2}>
-  //     <Button fullWidth size="large" color="inherit" variant="outlined">
-  //       <Iconify icon="logos:google-icon" width={24} />
-  //     </Button>
+  const renderSocials = (
+    <Stack direction="row" spacing={2}>
+      <Button fullWidth size="large" color="inherit" variant="outlined">
+        <Iconify icon="logos:google-icon" width={24} />
+      </Button>
 
-  //     <Button fullWidth size="large" color="inherit" variant="outlined">
-  //       <Iconify icon="carbon:logo-facebook" width={24} sx={{ color: '#1877F2' }} />
-  //     </Button>
+      <Button fullWidth size="large" color="inherit" variant="outlined">
+        <Iconify icon="carbon:logo-facebook" width={24} sx={{ color: '#1877F2' }} />
+      </Button>
 
-  //     <Button color="inherit" fullWidth variant="outlined" size="large">
-  //       <Iconify icon="carbon:logo-github" width={24} sx={{ color: 'text.primary' }} />
-  //     </Button>
-  //   </Stack>
-  // );
+      <Button color="inherit" fullWidth variant="outlined" size="large">
+        <Iconify icon="carbon:logo-github" width={24} sx={{ color: 'text.primary' }} />
+      </Button>
+    </Stack>
+  );
 
   const renderForm = (
     <FormProvider methods={methods} onSubmit={onSubmit}>
@@ -138,13 +138,7 @@ export default function RegisterBackgroundView() {
             ),
           }}
         />
-        <Link
-          component={RouterLink}
-          href={paths.verify}
-          variant="body2"
-          underline="always"
-          color="text.secondary"
-        >
+
         <LoadingButton
           fullWidth
           color="inherit"
@@ -155,9 +149,8 @@ export default function RegisterBackgroundView() {
         >
           Register
         </LoadingButton>
-        </Link>
 
-        {/* <Typography variant="caption" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
+        <Typography variant="caption" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
           {`I agree to `}
           <Link color="text.primary" href="#" underline="always">
             Terms of Service
@@ -166,7 +159,7 @@ export default function RegisterBackgroundView() {
           <Link color="text.primary" href="#" underline="always">
             Privacy Policy.
           </Link>
-        </Typography> */}
+        </Typography>
       </Stack>
     </FormProvider>
   );
@@ -177,13 +170,13 @@ export default function RegisterBackgroundView() {
 
       {renderForm}
 
-      {/* <Divider>
+      <Divider>
         <Typography variant="body2" sx={{ color: 'text.disabled' }}>
           or continue with
         </Typography>
-      </Divider> */}
+      </Divider>
 
-      {/* {renderSocials} */}
+      {renderSocials}
     </>
   );
 }

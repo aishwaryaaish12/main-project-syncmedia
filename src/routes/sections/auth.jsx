@@ -17,9 +17,6 @@ const RegisterCoverPage = lazy(() => import('src/pages/auth/register-cover'));
 const RegisterIllustrationPage = lazy(() => import('src/pages/auth/register-illustration'));
 const ForgotPasswordPage = lazy(() => import('src/pages/auth/forgot-password'));
 const VerifyPage = lazy(() => import('src/pages/auth/verify'));
-const ResetPasswordPage = lazy(() => import('src/pages/auth/reset'));
-const ResetPasswordForm = lazy(() => import('src/pages/auth/resetpassword'));
-
 
 // ----------------------------------------------------------------------
 
@@ -101,8 +98,6 @@ export const authRoutes = [
         children: [
           { path: 'forgot-password', element: <ForgotPasswordPage /> },
           { path: 'verify', element: <VerifyPage /> },
-          { path: 'reset', element: <ResetPasswordPage /> },
-          { path: 'resetpassword', element: <ResetPasswordForm /> },
         ],
       },
     ],

@@ -63,13 +63,6 @@ export default function VerifyView() {
       <FormProvider methods={methods} onSubmit={onSubmit}>
         <RHFCode name="code" />
 
-        <Link
-          component={RouterLink}
-          href={paths.loginBackground}
-          variant="body2"
-          underline="always"
-          color="text.secondary"
-        >
         <LoadingButton
           fullWidth
           size="large"
@@ -81,7 +74,6 @@ export default function VerifyView() {
         >
           Verify
         </LoadingButton>
-        </Link>
       </FormProvider>
 
       <Typography variant="body2" align="center" sx={{ mt: 3 }}>
@@ -93,7 +85,7 @@ export default function VerifyView() {
 
       <Link
         component={RouterLink}
-        href={paths.loginBackground}
+        href={paths.loginCover}
         color="inherit"
         variant="subtitle2"
         sx={{

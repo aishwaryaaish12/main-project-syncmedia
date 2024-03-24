@@ -9,11 +9,11 @@ import useTypography from './use-typography';
 // ----------------------------------------------------------------------
 
 const TextMaxLine = forwardRef(
-  ({ asLink, variant = 'body1', line = 10, persistent = false, children, sx, ...other }, ref) => {
+  ({ asLink, variant = 'body1', line = 2, persistent = false, children, sx, ...other }, ref) => {
     const { lineHeight } = useTypography(variant);
 
     const styles = {
-      // overflow: 'hidden',
+      overflow: 'hidden',
       textOverflow: 'ellipsis',
       display: '-webkit-box',
       WebkitLineClamp: line,

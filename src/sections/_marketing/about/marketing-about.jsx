@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Unstable_Grid2';
+ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import { alpha, styled } from '@mui/material/styles';
 
@@ -9,7 +9,7 @@ import { useResponsive } from 'src/hooks/use-responsive';
 
 import { fShortenNumber } from 'src/utils/format-number';
 
-import Image from 'src/components/image';
+ import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 import CountUp from 'src/components/count-up';
 
@@ -65,12 +65,12 @@ export default function MarketingAbout() {
         pb: 10,
       }}
     >
-      <Grid container spacing={3} justifyContent="space-between" alignItems="center">
+       <Grid container spacing={3} justifyContent="space-between" alignItems="center">
         {mdUp && (
           <Grid xs={12} md={6} lg={5}>
             <Image alt="teams" src="/assets/illustrations/illustration_teams.svg" />
           </Grid>
-        )}
+        )} 
 
         <Grid
           xs={12}
@@ -80,7 +80,7 @@ export default function MarketingAbout() {
             textAlign: { xs: 'center', md: 'left' },
           }}
         >
-          <Typography variant="h2">Who We Are?</Typography>
+          <Typography variant="h2">Who We Ae?</Typography>
 
           <Typography sx={{ mt: 3, mb: 5, color: 'text.secondary' }}>
             Vivamus consectetuer hendrerit lacus. Curabitur a felis in nunc fringilla tristique.

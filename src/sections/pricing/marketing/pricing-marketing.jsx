@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-// import Switch from '@mui/material/Switch';
+import Switch from '@mui/material/Switch';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
@@ -45,13 +45,13 @@ export default function PricingMarketing({ plans }) {
           </Typography>
         </Stack>
 
-        {/* <Stack direction="row" alignItems="center">
+        <Stack direction="row" alignItems="center">
           <Typography variant="overline">MONTHLY</Typography>
 
           <Switch defaultChecked />
 
           <Typography variant="overline">YEARLY (save 10%)</Typography>
-        </Stack> */}
+        </Stack>
       </Stack>
 
       <Box

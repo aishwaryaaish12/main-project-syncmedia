@@ -64,16 +64,7 @@ export default function ForgotPasswordView() {
 
       <FormProvider methods={methods} onSubmit={onSubmit}>
         <RHFTextField name="email" hiddenLabel placeholder="Email address" />
-       
-       
-        <Link
-          component={RouterLink}
-          href={paths.reset}
-          variant="body2"
-          underline="always"
-          color="text.secondary"
-        >
-  
+
         <LoadingButton
           fullWidth
           size="large"
@@ -85,12 +76,11 @@ export default function ForgotPasswordView() {
         >
           Reset Password
         </LoadingButton>
-        </Link>
       </FormProvider>
 
       <Link
         component={RouterLink}
-        href={paths.loginBackground}
+        href={paths.loginCover}
         color="inherit"
         variant="subtitle2"
         sx={{

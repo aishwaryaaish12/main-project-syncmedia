@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-// import Fab from '@mui/material/Fab';
+import Fab from '@mui/material/Fab';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -12,7 +12,7 @@ import { useResponsive } from 'src/hooks/use-responsive';
 import { bgGradient } from 'src/theme/css';
 
 import Image from 'src/components/image';
-// import Iconify from 'src/components/iconify';
+import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
@@ -48,16 +48,17 @@ export default function MarketingLandingHero() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            {/* <Typography variant="overline" sx={{ color: 'secondary.main' }}>
+            <Typography variant="overline" sx={{ color: 'secondary.main' }}>
               Digital Marketing
-            </Typography> */}
+            </Typography>
 
             <Typography variant="h1" sx={{ my: 3 }}>
-              Dive into the world of influence
+              Boosts Your Website Traffic
             </Typography>
 
             <Typography sx={{ color: 'text.secondary' }}>
-             our social media mastery ensures your brand not only stands out but stays ahead
+              Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis
+              venenatis ante odio sit amet eros.
             </Typography>
 
             <Stack
@@ -68,15 +69,15 @@ export default function MarketingLandingHero() {
               sx={{ mt: 5 }}
             >
               <Button variant="contained" color="inherit" size="large">
-                Get Started
+                Try For Free
               </Button>
 
-              {/* <Stack direction="row" alignItems="center" sx={{ typography: 'h6' }}>
+              <Stack direction="row" alignItems="center" sx={{ typography: 'h6' }}>
                 <Fab size="medium" sx={{ mr: 1 }}>
                   <Iconify width={24} icon="carbon:play" />
                 </Fab>
                 See Our Work
-              </Stack> */}
+              </Stack>
             </Stack>
           </Grid>
 
@@ -86,7 +87,7 @@ export default function MarketingLandingHero() {
                 visibleByDefault
                 disabledEffect
                 alt="marketing market"
-                src="/assets/illustrations/illustration_marketing_market.svg"
+                src="public/assets/images/marketing/social-media-marketing-concept-marketing-with-applications.jpg"
               />
             </Grid>
           )}

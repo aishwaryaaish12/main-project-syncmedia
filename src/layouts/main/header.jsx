@@ -1,31 +1,31 @@
 import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
-// import Link from '@mui/material/Link';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 
-// import { paths } from 'src/routes/paths';
+import { paths } from 'src/routes/paths';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 import { useOffSetTop } from 'src/hooks/use-off-set-top';
 
 import { bgBlur } from 'src/theme/css';
 
-// import Logo from 'src/components/logo';
-// import Label from 'src/components/label';
+import Logo from 'src/components/logo';
+import Label from 'src/components/label';
 
 import NavMobile from './nav/mobile';
 import NavDesktop from './nav/desktop';
 import { HEADER } from '../config-layout';
-// import Searchbar from '../common/searchbar';
+import Searchbar from '../common/searchbar';
 import { navConfig } from './config-navigation';
 import HeaderShadow from '../common/header-shadow';
-// import SettingsButton from '../common/settings-button';
+import SettingsButton from '../common/settings-button';
 
 // ----------------------------------------------------------------------
 
@@ -39,10 +39,9 @@ export default function Header({ headerOnDark }) {
   const renderContent = (
     <>
       <Box sx={{ lineHeight: 0, position: 'relative' }}>
-        {/* <Logo /> */}
-        
+        <Logo />
 
-        {/* <Link href="https://zone-docs.vercel.app/changelog" target="_blank" rel="noopener">
+        <Link href="https://zone-docs.vercel.app/changelog" target="_blank" rel="noopener">
           <Label
             color="info"
             sx={{
@@ -58,7 +57,7 @@ export default function Header({ headerOnDark }) {
           >
           v2.3.0
           </Label>
-        </Link> */}
+        </Link>
       </Box>
 
       {mdUp ? (
@@ -70,13 +69,13 @@ export default function Header({ headerOnDark }) {
       )}
 
       <Stack spacing={2} direction="row" alignItems="center" justifyContent="flex-end">
-        {/* <Stack spacing={1} direction="row" alignItems="center">
+        <Stack spacing={1} direction="row" alignItems="center">
           <Searchbar />
 
           <SettingsButton />
-        </Stack> */}
+        </Stack>
 
-        {/* {mdUp && (
+        {mdUp && (
           <Button
             variant="contained"
             color="inherit"
@@ -86,7 +85,7 @@ export default function Header({ headerOnDark }) {
           >
             Buy Now
           </Button>
-        )} */}
+        )}
       </Stack>
 
       {!mdUp && <NavMobile data={navConfig} />}

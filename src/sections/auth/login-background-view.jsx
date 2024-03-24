@@ -4,8 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
-// import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -71,27 +71,27 @@ export default function LoginBackgroundView() {
           variant="subtitle2"
           color="primary"
         >
-          Sign Up
+          Get started
         </Link>
       </Typography>
     </div>
   );
 
-  // const renderSocials = (
-  //   <Stack direction="row" spacing={2}>
-  //     <Button fullWidth size="large" color="inherit" variant="outlined">
-  //       <Iconify icon="logos:google-icon" width={24} />
-  //     </Button>
+  const renderSocials = (
+    <Stack direction="row" spacing={2}>
+      <Button fullWidth size="large" color="inherit" variant="outlined">
+        <Iconify icon="logos:google-icon" width={24} />
+      </Button>
 
-  //     <Button fullWidth size="large" color="inherit" variant="outlined">
-  //       <Iconify icon="carbon:logo-facebook" width={24} sx={{ color: '#1877F2' }} />
-  //     </Button>
+      <Button fullWidth size="large" color="inherit" variant="outlined">
+        <Iconify icon="carbon:logo-facebook" width={24} sx={{ color: '#1877F2' }} />
+      </Button>
 
-  //     <Button color="inherit" fullWidth variant="outlined" size="large">
-  //       <Iconify icon="carbon:logo-github" width={24} sx={{ color: 'text.primary' }} />
-  //     </Button>
-  //   </Stack>
-  // );
+      <Button color="inherit" fullWidth variant="outlined" size="large">
+        <Iconify icon="carbon:logo-github" width={24} sx={{ color: 'text.primary' }} />
+      </Button>
+    </Stack>
+  );
 
   const renderForm = (
     <FormProvider methods={methods} onSubmit={onSubmit}>
@@ -143,13 +143,13 @@ export default function LoginBackgroundView() {
 
       {renderForm}
 
-      {/* <Divider>
+      <Divider>
         <Typography variant="body2" sx={{ color: 'text.disabled' }}>
           or continue with
         </Typography>
-      </Divider> */}
-{/* 
-      {renderSocials} */}
+      </Divider>
+
+      {renderSocials}
     </>
   );
 }
