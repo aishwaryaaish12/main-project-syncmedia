@@ -13,6 +13,7 @@ const CaseStudiesPage = lazy(() => import('src/pages/marketing/case-studies'));
 const LoginPage = lazy(() => import('src/pages/marketing/loghome'));
 const BusinessPage = lazy(() => import('src/pages/marketing/business'));
 const ContactUsPage = lazy(() => import('src/pages/marketing/contactus'));
+const ContentPage = lazy(() => import('src/pages/marketing/contentlibrary'));
 const UpdatePage = lazy(() => import('src/pages/marketing/update'));
 const SocialConnectPage = lazy(() => import('src/pages/marketing/socialconnect'));
 
@@ -33,6 +34,7 @@ export const marketingRoutes = [
       { path: 'post', element: <PostPage /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'contact', element: <ContactPage /> },
+      { path: 'content', element: <ContentPage /> },
       { path: 'loghome', element: <LoginPage /> },
       { path: 'business', element: <BusinessPage /> },
       { path: 'contactus', element: <ContactUsPage /> },
