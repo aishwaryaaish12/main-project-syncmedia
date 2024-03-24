@@ -1,35 +1,35 @@
-// import Box from '@mui/material/Box';
-// import Stack from '@mui/material/Stack';
-// import Button from '@mui/material/Button';
-// import Divider from '@mui/material/Divider';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 
-// import { fShortenNumber } from 'src/utils/format-number';
+import { fShortenNumber } from 'src/utils/format-number';
 
 import Image from 'src/components/image';
-// import Iconify from 'src/components/iconify';
+import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-// const ROWS = [
-//   {
-//     label: 'projects',
-//     total: 20,
-//     content: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
-//   },
-//   {
-//     label: 'Happy clients',
-//     total: 32000,
-//     content: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
-//   },
-//   {
-//     label: 'years of experience',
-//     total: 20,
-//     content: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
-//   },
-// ];
+const ROWS = [
+  {
+    label: 'projects',
+    total: 20,
+    content: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
+  },
+  {
+    label: 'Happy clients',
+    total: 32000,
+    content: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
+  },
+  {
+    label: 'years of experience',
+    total: 20,
+    content: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
+  },
+];
 
 // ----------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ export default function MarketingLandingAbout() {
     >
       <Image
         alt="landing about"
-        src="public/assets/images/marketing/Socialmediamarketing.jpg"
+        src="/assets/images/marketing/marketing_post_hero.jpg"
         ratio="16/9"
         sx={{
           borderRadius: 1.5,
@@ -60,7 +60,7 @@ export default function MarketingLandingAbout() {
           xs={12}
           md={5}
           sx={{
-            textAlign: { xs: 'center', md: 'left' },
+            textAlign: { xs: 'center', md: 'right' },
           }}
         >
           <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
@@ -72,19 +72,23 @@ export default function MarketingLandingAbout() {
           </Typography>
 
           <Typography sx={{ color: 'text.secondary' }}>
-          Empower your brand to connect with audiences globally, effortlessly manage content, and drive engagement across channels. Join us to elevate your digital presence and exceed marketing goals.
+            In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit. In dui magna, posuere eget, vestibulum et, tempor auctor,
+            justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+            turpis egestas.
           </Typography>
-          {/* <Button
+
+          <Button
             size="large"
             color="inherit"
             endIcon={<Iconify icon="carbon:chevron-right" />}
             sx={{ my: 5 }}
           >
             Lean more
-          </Button> */}
+          </Button>
         </Grid>
 
-        {/* <Grid xs={12} md={6}>
+        <Grid xs={12} md={6}>
           <Stack spacing={5}>
             {ROWS.map((row) => (
               <Stack
@@ -118,40 +122,7 @@ export default function MarketingLandingAbout() {
               </Stack>
             ))}
           </Stack>
-        </Grid> */}
-        <Grid
-          xs={12}
-          md={5}
-          sx={{
-            textAlign: { xs: 'center', md: 'left' },
-          }}
-        >
-          <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-            How it Works
-                      </Typography>
-
-          <Typography variant="h2" sx={{ my: 3 }}>
-            Overview
-          </Typography>
-
-          <Typography sx={{ color: 'text.secondary' }}>
-          Our user-friendly platform simplifies social media management.
-Sign up effortlessly create and edit profiles, connect social
-channels and gain insights for strategic planning. Streamline content,
-tailor posting methods, and execute campaigns seamlessly from a centralized hub. 
-Elevate your outreach with integrated email and WhatsApp campaigns.
-Experience efficient and unified social media management by signing up
-today.</Typography>
-          {/* <Button
-            size="large"
-            color="inherit"
-            endIcon={<Iconify icon="carbon:chevron-right" />}
-            sx={{ my: 5 }}
-          >
-            Lean more
-          </Button> */}
         </Grid>
-
       </Grid>
     </Container>
   );

@@ -12,6 +12,5 @@ export const _members = [...Array(8)].map((_, index) => ({
     instagram: `instagram/${_mock.fullName(index)}`,
     linkedin: `linkedin/${_mock.fullName(index)}`,
     twitter: `twitter/${_mock.fullName(index)}`,
-    youtube:`youtube/${_mock.fullName(index)}`,
   },
 }));
