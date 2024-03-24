@@ -11,7 +11,16 @@ export const paths = {
     post: `/marketing/post`,
     about: '/marketing/about',
     contact: '/marketing/contact',
-    content: '/marketing/content',
+    loghome: '/marketing/loghome',
+    business:'marketing/business',
+    contactus:'marketing/contactus',
+    update:'marketing/update',
+    socialconnect:'marketing/socialconnect',
+
+
+
+
+
   },
   // Travel
   travel: {

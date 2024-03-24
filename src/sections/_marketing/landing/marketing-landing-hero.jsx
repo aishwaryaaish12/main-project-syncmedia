@@ -26,7 +26,7 @@ export default function MarketingLandingHero() {
       sx={{
         ...bgGradient({
           color: alpha(theme.palette.background.default, 0.9),
-          imgUrl: '/assets/background/overlay_1.jpg',
+          imgUrl: 'assets/background/overlay_1.jpg',
         }),
         overflow: 'hidden',
       }}
@@ -86,7 +86,7 @@ export default function MarketingLandingHero() {
                 visibleByDefault
                 disabledEffect
                 alt="marketing market"
-                src="/assets/illustrations/illustration_marketing_market.svg"
+                src="/assets/images/marketing/social-media-marketing-concept-marketing-with-applications.jpg"
               />
             </Grid>
           )}

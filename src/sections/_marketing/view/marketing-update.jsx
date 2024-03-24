@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Stack from '@mui/material/Stack';
+import { InputAdornment } from '@mui/material';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
@@ -108,7 +109,14 @@ export default function MarketingUpdatePage() {
 
 
               <RHFTextField name="phoneNumber"  label="Phone Number"  />
-                <RHFTextField name="logo" label="Logo" endIcon={<Iconify icon="/assets/icons/material-symbols-light--upload.svg" />} />
+              <RHFTextField name="logo" label="Logo" InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <Iconify icon="material-symbols-light:upload"  sx={{cursor:'pointer'}}/> 
+             
+            </InputAdornment>
+          ),
+        }} />
 
               <RHFTextField name="subject" label="Address" multiline rows={4}/>
 

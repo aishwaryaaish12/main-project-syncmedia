@@ -9,16 +9,16 @@ import Typography from '@mui/material/Typography';
 
 //  import { _tours} from 'src/_mock';
 
-import TravelTourItem from 'src/sections/_travel/list/travel-tour-item';
+import TravelTourItemNew from 'src/sections/_travel/list/travel-tour-item-new';
 
 export default function MarketingSocialConnectPaage() {
 
   const imagesAndsocialLinks = [
-    {id:1, imageUrl: '/assets/images/marketing/home1.jpg',name:'Content Calendar', linkUrl: 'https://example.com/page1' },
-    { id:2,imageUrl: '/assets/images/marketing/home2.jpg',name:'Accounts', linkUrl: 'https://example.com/page2' },
-    { id:3,imageUrl: '/assets/images/marketing/home3.jpg',name:'Draft', linkUrl: 'https://example.com/page3' },
-    {id:4, imageUrl: '/assets/images/marketing/home4.jpg', name:'Publishing',linkUrl: 'https://example.com/page3' },
-    {id:5, imageUrl: '/assets/images/marketing/home5.jpg', name:'Publishing',linkUrl: 'https://example.com/page3' },
+    {id:1, imageUrl: '/assets/images/marketing/social1.png',name:'Facebook', linkUrl: 'developers.facebook.com' },
+    {id:2,imageUrl: '/assets/images/marketing/social2.jpg',name:'Instagram', linkUrl: 'developers.facebook.com/docs/instagram'},
+    {id:3,imageUrl: '/assets/images/marketing/social3.png',name:'Linkedin', linkUrl: 'developer.linkedin.com' },
+    {id:4, imageUrl: '/assets/images/marketing/social4.png', name:'Twitter',linkUrl: 'developer.twitter.com' },
+    {id:5, imageUrl: '/assets/images/marketing/social5.png', name:'Youtube',linkUrl: ': https://console.developers.google.com/' },
 
 
     // Add more objects as needed
@@ -45,7 +45,7 @@ export default function MarketingSocialConnectPaage() {
           },
         }}>
                   {imagesAndsocialLinks.map((item, index) => (
-          <TravelTourItem key={item.id} imagesAndsocialLinks={item} />
+          <TravelTourItemNew key={item.id} imagesAndsocialLinks={item} />
 ))}
          {/* {_tours?.map((tour) => (
           <TravelTourItem key={tour.id} tour={tour} />

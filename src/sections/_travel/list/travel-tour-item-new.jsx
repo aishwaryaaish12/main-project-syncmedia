@@ -20,8 +20,8 @@ import TextMaxLine from 'src/components/text-max-line';
 
 // ----------------------------------------------------------------------
 
-export default function TravelTourItem({ imagesAndLinks }) {
-  const { imageUrl,name,linkUrl } = imagesAndLinks ;
+export default function TravelTourItemNew({ imagesAndsocialLinks }) {
+  const { imageUrl,name,linkUrl } = imagesAndsocialLinks ;
 
   // // // const [favorite, setFavorite] = useState(favorited);
 
@@ -119,8 +119,8 @@ export default function TravelTourItem({ imagesAndLinks }) {
   );
 }
 
-TravelTourItem.propTypes = {
-  imagesAndLinks: PropTypes.shape({
+TravelTourItemNew.propTypes = {
+  imagesAndsocialLinks: PropTypes.shape({
     imageUrl: PropTypes.string, // Update property name to 'imageUrl'
     name: PropTypes.string,
     linkUrl: PropTypes.string,
