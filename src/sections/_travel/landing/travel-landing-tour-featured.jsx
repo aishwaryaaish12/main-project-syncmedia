@@ -14,7 +14,6 @@ import TravelTourItem from '../list/travel-tour-item';
 // ----------------------------------------------------------------------
 
 export default function TravelLandingTourFeatured({ tours }) {
-  
   return (
     <Container
       sx={{

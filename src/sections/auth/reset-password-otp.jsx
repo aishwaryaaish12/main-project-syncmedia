@@ -16,7 +16,7 @@ import FormProvider, { RHFCode } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 
-export default function VerifyView() {
+export default function ResetPassword() {
   const VerifySchema = Yup.object().shape({
     code: Yup.string().min(6, 'Code must be at least 6 characters').required('Code is required'),
   });
@@ -62,10 +62,10 @@ export default function VerifyView() {
 
       <FormProvider methods={methods} onSubmit={onSubmit}>
         <RHFCode name="code" />
-
+        
         <Link
           component={RouterLink}
-          href={paths.loginBackground}
+          href={paths.resetpassword}
           variant="body2"
           underline="always"
           color="text.secondary"
@@ -79,7 +79,7 @@ export default function VerifyView() {
           loading={isSubmitting}
           sx={{ mt: 3 }}
         >
-          Verify
+          Confirm the code
         </LoadingButton>
         </Link>
       </FormProvider>

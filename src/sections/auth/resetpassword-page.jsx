@@ -21,19 +21,21 @@ import FormProvider, { RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 
-export default function LoginBackgroundView() {
+export default function ResetPasswordForm() {
   const passwordShow = useBoolean();
 
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().required('Email is required').email('That is not an email'),
-    password: Yup.string()
+    password1: Yup.string()
+    .required('Password is required')
+    .min(6, 'Password should be of minimum 6 characters length'),
+    password2: Yup.string()
       .required('Password is required')
       .min(6, 'Password should be of minimum 6 characters length'),
   });
 
   const defaultValues = {
-    email: '',
-    password: '',
+    password1: '',
+    password2: '',
   };
 
   const methods = useForm({
@@ -60,10 +62,10 @@ export default function LoginBackgroundView() {
   const renderHead = (
     <div>
       <Typography variant="h3" paragraph>
-        Login
+        Reset Password
       </Typography>
 
-      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+      {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>
         {`Don’t have an account? `}
         <Link
           component={RouterLink}
@@ -73,7 +75,7 @@ export default function LoginBackgroundView() {
         >
           Sign Up
         </Link>
-      </Typography>
+      </Typography> */}
     </div>
   );
 
@@ -96,11 +98,23 @@ export default function LoginBackgroundView() {
   const renderForm = (
     <FormProvider methods={methods} onSubmit={onSubmit}>
       <Stack spacing={2.5} alignItems="flex-end">
-        <RHFTextField name="email" label="Email address" />
+        <RHFTextField 
+          name="password1" 
+          label="Enter new password" 
+          type={passwordShow.value ? 'text' : 'password'}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={passwordShow.onToggle} edge="end">
+                  <Iconify icon={passwordShow.value ? 'carbon:view' : 'carbon:view-off'} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}/>
 
         <RHFTextField
-          name="password"
-          label="Password"
+          name="password2"
+          label="Confirm Password"
           type={passwordShow.value ? 'text' : 'password'}
           InputProps={{
             endAdornment: (
@@ -113,7 +127,7 @@ export default function LoginBackgroundView() {
           }}
         />
 
-        <Link
+        {/* <Link
           component={RouterLink}
           href={paths.forgotPassword}
           variant="body2"
@@ -121,8 +135,13 @@ export default function LoginBackgroundView() {
           color="text.secondary"
         >
           Forgot password?
-        </Link>
-
+        </Link>  */}
+        
+       <Link component={RouterLink}
+          href={paths.loginBackground}
+          variant="body2"
+          underline="always"
+          color="text.secondary">
         <LoadingButton
           fullWidth
           color="inherit"
@@ -131,8 +150,9 @@ export default function LoginBackgroundView() {
           variant="contained"
           loading={isSubmitting}
         >
-          Login
+          Submit
         </LoadingButton>
+        </Link>
       </Stack>
     </FormProvider>
   );

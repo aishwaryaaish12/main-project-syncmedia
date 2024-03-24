@@ -11,14 +11,7 @@ export const paths = {
     post: `/marketing/post`,
     about: '/marketing/about',
     contact: '/marketing/contact',
-    loghome: '/marketing/loghome',
-    business:'marketing/business',
-    contactus:'marketing/contactus',
-    update:'marketing/update',
-    socialconnect:'marketing/socialconnect',
-
-
-
+    content: '/marketing/content',
   },
   // Travel
   travel: {
@@ -80,6 +73,8 @@ export const paths = {
   registerIllustration: '/auth/register-illustration',
   forgotPassword: '/auth/forgot-password',
   verify: '/auth/verify',
+  reset: '/auth/reset',
+  resetpassword: '/auth/resetpassword',
   // Common
   maintenance: '/maintenance',
   comingsoon: '/coming-soon',

@@ -1,33 +1,33 @@
 import PropTypes from 'prop-types';
-// import { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
-// import Box from '@mui/material/Box';
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
-// import Checkbox from '@mui/material/Checkbox';
+import Checkbox from '@mui/material/Checkbox';
 import Typography from '@mui/material/Typography';
 
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
-// import { fCurrency } from 'src/utils/format-number';
+import { fCurrency } from 'src/utils/format-number';
 
 import Image from 'src/components/image';
-// import Iconify from 'src/components/iconify';
+import Iconify from 'src/components/iconify';
 import TextMaxLine from 'src/components/text-max-line';
 
 // ----------------------------------------------------------------------
 
-export default function TravelTourItem({ imagesAndLinks }) {
-  const { imageUrl,name,linkUrl } = imagesAndLinks ;
+export default function TravelTourItem({ tour }) {
+  const { slug, location, price, priceSale, favorited, duration, ratingNumber, coverUrl } = tour;
 
-  // // // const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(favorited);
 
-  // // const handleChangeFavorite = useCallback((event) => {
-  // //   setFavorite(event.target.checked);
-  //  }, []);
+  const handleChangeFavorite = useCallback((event) => {
+    setFavorite(event.target.checked);
+  }, []);
 
   return (
     <Card>
@@ -45,7 +45,7 @@ export default function TravelTourItem({ imagesAndLinks }) {
           position: 'absolute',
         }}
       >
-        {/* <Stack
+        <Stack
           spacing={0.5}
           direction="row"
           sx={{
@@ -77,26 +77,26 @@ export default function TravelTourItem({ imagesAndLinks }) {
           icon={<Iconify icon="carbon:favorite" />}
           checkedIcon={<Iconify icon="carbon:favorite-filled" />}
           sx={{ color: 'common.white' }}
-        /> */}
-      </Stack> 
+        />
+      </Stack>
 
-      <Image  src={imageUrl} ratio="1/1" />
+      <Image alt={slug} src={coverUrl} ratio="1/1" />
 
       <Stack spacing={0.5} sx={{ p: 2.5 }}>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {name}
+          {location}
         </Typography>
 
         <Link component={RouterLink} href={paths.travel.tour} color="inherit">
           <TextMaxLine variant="h6" persistent>
-            {linkUrl}
+            {slug}
           </TextMaxLine>
         </Link>
       </Stack>
 
       <Divider sx={{ borderStyle: 'dashed' }} />
 
-      {/* <Stack direction="row" alignItems="center" sx={{ p: 2.5 }}>
+      <Stack direction="row" alignItems="center" sx={{ p: 2.5 }}>
         <Stack
           flexGrow={1}
           direction="row"
@@ -104,26 +104,28 @@ export default function TravelTourItem({ imagesAndLinks }) {
           sx={{ typography: 'body2', color: 'text.disabled' }}
         >
           <Iconify icon="carbon:time" width={16} sx={{ mr: 1 }} /> {duration}
-        </Stack> */}
+        </Stack>
 
-        {/* <Stack spacing={0.5} direction="row" alignItems="center">
+        <Stack spacing={0.5} direction="row" alignItems="center">
           <Iconify icon="carbon:star-filled" sx={{ color: 'warning.main' }} />
           <Box sx={{ typography: 'h6' }}>
             {Number.isInteger(ratingNumber) ? `${ratingNumber}.0` : ratingNumber}
           </Box>
         </Stack>
-
-      </Stack> */}
-
+      </Stack>
     </Card>
   );
 }
 
 TravelTourItem.propTypes = {
-  imagesAndLinks: PropTypes.shape({
-    imageUrl: PropTypes.string, // Update property name to 'imageUrl'
-    name: PropTypes.string,
-    linkUrl: PropTypes.string,
+  tour: PropTypes.shape({
+    coverUrl: PropTypes.string,
+    duration: PropTypes.string,
+    favorited: PropTypes.bool,
+    location: PropTypes.string,
+    price: PropTypes.number,
+    priceSale: PropTypes.number,
+    slug: PropTypes.string,
+    ratingNumber: PropTypes.number,
   }),
 };
-

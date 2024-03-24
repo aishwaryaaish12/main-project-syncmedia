@@ -15,20 +15,20 @@ const COLORS = ['primary', 'secondary', 'warning', 'success'];
 
 const SERVICES = [
   {
-    name: 'Business',
-    icon: '/assets/icons/ic_resume_job.svg',
+    name: 'Planning',
+    icon: '/assets/icons/ic_sketch_design.svg',
   },
   {
-    name: 'Social Connect',
-    icon: 'public/assets/icons/carbon--ibm-cloud-direct-link-1-dedicated-hosting.svg',
+    name: 'Research',
+    icon: '/assets/icons/ic_search.svg',
   },
   {
-    name: 'Content Library',
-    icon: 'public/assets/icons/fluent-mdl2--content-feed.svg',
+    name: 'Optimizing',
+    icon: '/assets/icons/ic_optimization.svg',
   },
   {
-    name: 'Campaign',
-    icon: 'public/assets/icons/service/ic_service_bullhorn.svg',
+    name: 'Results',
+    icon: '/assets/icons/ic_analysis.svg',
   },
 ];
 
@@ -56,9 +56,9 @@ export default function MarketingLandingProcess() {
 
         <Typography variant="h2">Working Process</Typography>
 
-        {/* <Typography sx={{ color: 'text.secondary' }}>
+        <Typography sx={{ color: 'text.secondary' }}>
           Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.
-        </Typography> */}
+        </Typography>
       </Stack>
 
       <Box
