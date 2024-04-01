@@ -14,22 +14,22 @@ import Typography from '@mui/material/Typography';
 import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
 
-import { useBoolean } from 'src/hooks/use-boolean';
+// import { useBoolean } from 'src/hooks/use-boolean';
 
 import { _tours } from 'src/_mock';
 
 import FormProvider from 'src/components/hook-form';
 
 import TravelCheckOutSummary from '../checkout/travel-check-out-summary';
-import TravelCheckOutPaymentForm from '../checkout/travel-check-out-payment-form';
-import TravelCheckOutShippingForm from '../checkout/travel-check-out-shipping-form';
+// import TravelCheckOutPaymentForm from '../checkout/travel-check-out-payment-form';
+// import TravelCheckOutShippingForm from '../checkout/travel-check-out-shipping-form';
 
 // ----------------------------------------------------------------------
 
 export default function TravelCheckoutView() {
   const router = useRouter();
 
-  const sameBilling = useBoolean();
+  // const sameBilling = useBoolean();
 
   const [departureDay, setDepartureDay] = useState(new Date());
 
@@ -136,16 +136,16 @@ export default function TravelCheckoutView() {
             <Stack>
               <StepLabel title="Shipping Information" step="1" />
 
-              <TravelCheckOutShippingForm
+              {/* <TravelCheckOutShippingForm
                 sameBilling={sameBilling.value}
                 onChangeSameBilling={sameBilling.onToggle}
-              />
+              /> */}
 
               <Divider sx={{ my: 5, borderStyle: 'dashed' }} />
 
               <StepLabel title="Payment Methods" step="2" />
 
-              <TravelCheckOutPaymentForm />
+              {/* <TravelCheckOutPaymentForm /> */}
             </Stack>
           </Grid>
 

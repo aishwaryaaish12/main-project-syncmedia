@@ -3,16 +3,12 @@ import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-// import Link from '@mui/material/Link';
 import { Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
-
-// import { paths } from 'src/routes/paths';
-// import { RouterLink } from 'src/routes/components';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
@@ -23,16 +19,16 @@ import FormProvider, {RHFUpload,RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 
-export default function MarketingContentForm() {
+export default function MarketingContent1Form() {
   const mdUp = useResponsive('up', 'md');
 
   const TravelContactSchema = Yup.object().shape({
-    image: Yup.string().required('Image is required'),
+    video: Yup.string().required('Video is required'),
     description: Yup.string().required('Description is required'),
   });
 
   const defaultValues = {
-    image: '',
+    video: '',
     description: '',
   };
 
@@ -60,13 +56,20 @@ export default function MarketingContentForm() {
   const handleDrop = useCallback(
     (acceptedFiles) => {
       const file = acceptedFiles[0];
+      
+      const isVideo = file.type.startsWith('video/');
 
       const newFile = Object.assign(file, {
         preview: URL.createObjectURL(file),
       });
 
-      if (file) {
-        setValue('image', newFile, { shouldValidate: true });
+      // if (file) {
+      //   setValue('image', newFile, { shouldValidate: true });
+      // }
+      if (isVideo) {
+        setValue('video', newFile, { shouldValidate: true }); // Assuming you have a field named 'video'
+      } else {
+        // Handle error or inform the user that only video files are allowed
       }
     },
     [setValue]
@@ -83,7 +86,7 @@ export default function MarketingContentForm() {
           <Grid xs={12} md={6} lg={5}>
             <Image sx={{width:'100%', mt:10}}
               alt=" "
-              src="/assets/illustrations/contentlibrary_image.svg"
+              src="/assets/illustrations/contentlibrary_video.svg"
             />
           </Grid>
         )}
@@ -106,37 +109,33 @@ export default function MarketingContentForm() {
           <Button 
             size='small'
             variant="contained"
-            color="error">
-              image
-              
+            color="inherit">
+              Image
           </Button>
           <Button
             size='small'
             variant="contained"
-            color="error">
+            color="inherit">
               Video
           </Button>
           <Button
           size='small'
             variant="contained"
-            color="error">
+            color="inherit">
               Blog
           </Button>
           </Stack>
           <FormProvider methods={methods} onSubmit={onSubmit}>
             <Stack spacing={2.5} alignItems="flex-start">
             <RHFUpload
-                name="image"
-                maxSize={1048576}
+                name="video"
+                maxSize={52428800}
                 onDrop={handleDrop}
-                placeholder="Upload the image"
-
                 // onRemove={handleRemoveFile}
                 // onRemoveAll={handleRemoveAllFiles}
                 // onUpload={() => console.log('ON UPLOAD')}
                 helperText={
-                  <>
-                  <Typography
+                  <><Typography
                     variant="caption"
                     sx={{
                       mt: 2,
@@ -146,9 +145,8 @@ export default function MarketingContentForm() {
                       color: 'text.secondary',
                     }}
                   >
-                     Upload image
-                    </Typography>
-                  <Typography
+                   Upload the video
+                  </Typography><Typography
                     variant="caption"
                     sx={{
                       mt: 2,
@@ -158,18 +156,18 @@ export default function MarketingContentForm() {
                       color: 'text.secondary',
                     }}
                   >
-                    Allowed *.jpeg, *.jpg, *.png, *.gif
-                    <br /> max size of {fData(104857)}
-                  </Typography></>
+                       Allowed *.mp4, *.mov, *.avi
+                      <br /> Max size of {fData(52428800)}
+                    </Typography></>
                 }
               />
-              <RHFTextField name="description" multiline rows={4} label="Enter the description" sx={{ pb: 2}} />
+              <RHFTextField name="description" multiline rows={4} label="Enter the description" sx={{ pb: 2.5 }} />
 
               <LoadingButton
                 size="large"
                 type="submit"
                 variant="contained"
-                color="error"
+                color="inherit"
                 loading={isSubmitting}
                 sx={{
                   alignSelf: { xs: 'center', md: 'unset' },

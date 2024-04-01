@@ -1,9 +1,8 @@
 import * as Yup from 'yup';
-import { useCallback } from 'react';
+// import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-// import Link from '@mui/material/Link';
 import { Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
@@ -11,28 +10,25 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
 
-// import { paths } from 'src/routes/paths';
-// import { RouterLink } from 'src/routes/components';
-
 import { useResponsive } from 'src/hooks/use-responsive';
 
-import { fData } from 'src/utils/format-number';
+// import { fData } from 'src/utils/format-number';
 
 import Image from 'src/components/image';
-import FormProvider, {RHFUpload,RHFTextField } from 'src/components/hook-form';
+import FormProvider, {RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 
-export default function MarketingContentForm() {
+export default function MarketingContent2Form() {
   const mdUp = useResponsive('up', 'md');
 
   const TravelContactSchema = Yup.object().shape({
-    image: Yup.string().required('Image is required'),
+    blog: Yup.string().required('Blog is required'),
     description: Yup.string().required('Description is required'),
   });
 
   const defaultValues = {
-    image: '',
+    blog: '',
     description: '',
   };
 
@@ -44,7 +40,6 @@ export default function MarketingContentForm() {
   const {
     reset,
     handleSubmit,
-    setValue,
     formState: { isSubmitting },
   } = methods;
 
@@ -57,21 +52,7 @@ export default function MarketingContentForm() {
     }
   });
 
-  const handleDrop = useCallback(
-    (acceptedFiles) => {
-      const file = acceptedFiles[0];
-
-      const newFile = Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      });
-
-      if (file) {
-        setValue('image', newFile, { shouldValidate: true });
-      }
-    },
-    [setValue]
-  );
-
+  
   return (
     <Container
       sx={{
@@ -83,7 +64,7 @@ export default function MarketingContentForm() {
           <Grid xs={12} md={6} lg={5}>
             <Image sx={{width:'100%', mt:10}}
               alt=" "
-              src="/assets/illustrations/contentlibrary_image.svg"
+              src="/assets/illustrations/contentlibrary_blog.svg"
             />
           </Grid>
         )}
@@ -106,70 +87,32 @@ export default function MarketingContentForm() {
           <Button 
             size='small'
             variant="contained"
-            color="error">
-              image
-              
+            color="inherit">
+              Image
           </Button>
           <Button
             size='small'
             variant="contained"
-            color="error">
+            color="inherit">
               Video
           </Button>
           <Button
           size='small'
             variant="contained"
-            color="error">
+            color="inherit">
               Blog
           </Button>
           </Stack>
           <FormProvider methods={methods} onSubmit={onSubmit}>
             <Stack spacing={2.5} alignItems="flex-start">
-            <RHFUpload
-                name="image"
-                maxSize={1048576}
-                onDrop={handleDrop}
-                placeholder="Upload the image"
-
-                // onRemove={handleRemoveFile}
-                // onRemoveAll={handleRemoveAllFiles}
-                // onUpload={() => console.log('ON UPLOAD')}
-                helperText={
-                  <>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                     Upload image
-                    </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                    Allowed *.jpeg, *.jpg, *.png, *.gif
-                    <br /> max size of {fData(104857)}
-                  </Typography></>
-                }
-              />
-              <RHFTextField name="description" multiline rows={4} label="Enter the description" sx={{ pb: 2}} />
+              <RHFTextField name="blog" multiline rows={6} label="Create Your Blog Here" sx={{pb:1}}/>
+              <RHFTextField name="description" multiline rows={4} label="Enter the description" sx={{ pb: 2.5 }} />
 
               <LoadingButton
                 size="large"
                 type="submit"
                 variant="contained"
-                color="error"
+                color="inherit"
                 loading={isSubmitting}
                 sx={{
                   alignSelf: { xs: 'center', md: 'unset' },
