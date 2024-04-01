@@ -22,7 +22,7 @@ export default function CareerLandingHotCategories({ categories }) {
       }}
     >
       <Typography variant="h2" sx={{ textAlign: 'center' }}>
-        Hot Categories
+         Hot Categories
       </Typography>
 
       <Box

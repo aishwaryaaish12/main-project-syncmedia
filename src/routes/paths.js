@@ -17,6 +17,8 @@ export const paths = {
     contactus:'marketing/contactus',
     update:'marketing/update',
     socialconnect:'marketing/socialconnect',
+    subscription:'marketing/subscription',
+    adminhome:'marketing/adminhome',
 
 
 

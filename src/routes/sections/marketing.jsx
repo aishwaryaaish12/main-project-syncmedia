@@ -16,6 +16,8 @@ const ContactUsPage = lazy(() => import('src/pages/marketing/contactus'));
 const ContentPage = lazy(() => import('src/pages/marketing/contentlibrary'));
 const UpdatePage = lazy(() => import('src/pages/marketing/update'));
 const SocialConnectPage = lazy(() => import('src/pages/marketing/socialconnect'));
+const SubscriptionView = lazy(() => import('src/pages/marketing/subscription'));
+const AdminhomePage = lazy(() => import('src/pages/marketing/adminhome'));
 
 
 
@@ -40,6 +42,8 @@ export const marketingRoutes = [
       { path: 'contactus', element: <ContactUsPage /> },
       { path: 'update', element: <UpdatePage /> },
       { path: 'socialconnect', element: <SocialConnectPage /> },
+      { path: 'subscription', element: <SubscriptionView /> },
+      { path: 'adminhome', element: <AdminhomePage /> },
 
     ],
   },

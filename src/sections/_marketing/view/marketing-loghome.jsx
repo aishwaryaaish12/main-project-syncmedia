@@ -15,13 +15,13 @@ export default function MarketingLoghome() {
 
   const imagesAndLinks = [
     {id:1, imageUrl: '/assets/images/marketing/home1.jpg',name:'Content Calendar', linkUrl: 'https://example.com/page1' },
-    { id:2,imageUrl: '/assets/images/marketing/home2.jpg',name:'Accounts', linkUrl: 'https://example.com/page2' },
+    { id:2,imageUrl: '/assets/images/marketing/home2.jpg',name:'Accounts', linkUrl:  '/social-connect' },
     { id:3,imageUrl: '/assets/images/marketing/home3.jpg',name:'Draft', linkUrl: 'https://example.com/page3' },
     {id:4, imageUrl: '/assets/images/marketing/home4.jpg', name:'Publishing',linkUrl: 'https://example.com/page3' },
 
     // Add more objects as needed
   ];
-    
+  
 
 
   return (
@@ -44,6 +44,7 @@ export default function MarketingLoghome() {
         }}>
                   {imagesAndLinks.map((item, index) => (
           <TravelTourItem key={item.id} imagesAndLinks={item} />
+
 ))}
          {/* {_tours?.map((tour) => (
           <TravelTourItem key={tour.id} tour={tour} />
