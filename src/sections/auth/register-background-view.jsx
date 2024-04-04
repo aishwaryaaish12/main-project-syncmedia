@@ -68,7 +68,7 @@ export default function RegisterBackgroundView() {
 
   const renderHead = (
     <div>
-      <Typography variant="h3" paragraph>
+      <Typography variant="h3" paragraph sx={{color:'primary.darker'}}>
         Sign Up
       </Typography>
 
@@ -147,7 +147,7 @@ export default function RegisterBackgroundView() {
         >
         <LoadingButton
           fullWidth
-          color="inherit"
+          color="primary"
           size="large"
           type="submit"
           variant="contained"

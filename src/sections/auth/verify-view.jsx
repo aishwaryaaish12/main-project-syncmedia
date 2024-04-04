@@ -53,7 +53,7 @@ export default function VerifyView() {
         sx={{ mb: 5, width: 96, height: 96, mx: 'auto' }}
       />
 
-      <Typography variant="h3">Check Your Email</Typography>
+      <Typography variant="h3" sx={{color:'primary.darker'}}>Check Your Email</Typography>
 
       <Typography variant="body2" sx={{ mt: 2, mb: 5, color: 'text.secondary' }}>
         We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
@@ -73,7 +73,7 @@ export default function VerifyView() {
         <LoadingButton
           fullWidth
           size="large"
-          color="inherit"
+          color="primary"
           type="submit"
           variant="contained"
           loading={isSubmitting}

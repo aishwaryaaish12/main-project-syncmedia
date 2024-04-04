@@ -11,14 +11,14 @@ import Typography from '@mui/material/Typography';
 
 import TravelTourItemNew from 'src/sections/_travel/list/travel-tour-item-new';
 
-export default function MarketingSocialConnectPaage() {
+export default function MarketingSocialConnectPage() {
 
   const imagesAndsocialLinks = [
-    {id:1, imageUrl: '/assets/images/marketing/social1.png',name:'Facebook', linkUrl: 'developers.facebook.com' },
-    {id:2,imageUrl: '/assets/images/marketing/social2.jpg',name:'Instagram', linkUrl: 'developers.facebook.com/docs/instagram'},
-    {id:3,imageUrl: '/assets/images/marketing/social3.png',name:'Linkedin', linkUrl: 'developer.linkedin.com' },
-    {id:4, imageUrl: '/assets/images/marketing/social4.png', name:'Twitter',linkUrl: 'developer.twitter.com' },
-    {id:5, imageUrl: '/assets/images/marketing/social5.png', name:'Youtube',linkUrl: ': https://console.developers.google.com/' },
+    {id:1, imageUrl: '/assets/icons/travel/ic_social1.svg',name:'Facebook', linkUrl: 'https://developers.facebook.com/',action:'Connect' },
+    {id:2,imageUrl: '/assets/icons/travel/ic_social2.svg',name:'Instagram', linkUrl: 'https://www.instagram.com/developer/',action:'Connect'},
+    {id:3,imageUrl: '/assets/icons/travel/ic_social3.svg',name:'Linkedin', linkUrl: 'https://developer.linkedin.com/',action:'Connect' },
+    {id:4, imageUrl: '/assets/icons/travel/ic_social4.svg', name:'Twitter',linkUrl: 'https://developer.twitter.com/' ,action:'Connect'},
+    {id:5, imageUrl: '/assets/icons/travel/ic_social5.svg', name:'Youtube',linkUrl: 'https://developers.google.com/youtube/',action:'Connect' },
 
 
     // Add more objects as needed

@@ -67,7 +67,7 @@ export default function MarketingLandingAbout() {
             About us
           </Typography>
 
-          <Typography variant="h2" sx={{ my: 3 }}>
+          <Typography variant="h2" sx={{ my: 3,color:'primary.darker' }}>
             Who We Are
           </Typography>
 
@@ -130,7 +130,7 @@ export default function MarketingLandingAbout() {
             How it Works
                       </Typography>
 
-          <Typography variant="h2" sx={{ my: 3 }}>
+          <Typography variant="h2" sx={{ my: 3,color:'primary.darker' }}>
             Overview
           </Typography>
 

@@ -59,7 +59,7 @@ export default function LoginBackgroundView() {
 
   const renderHead = (
     <div>
-      <Typography variant="h3" paragraph>
+      <Typography variant="h3" paragraph sx={{color:'primary.darker'}}>
         Login
       </Typography>
 
@@ -125,7 +125,7 @@ export default function LoginBackgroundView() {
 
         <LoadingButton
           fullWidth
-          color="inherit"
+          color="primary"
           size="large"
           type="submit"
           variant="contained"

@@ -31,11 +31,11 @@ export const _tours = [...Array(12)].map((_, index) => {
   const highlights = [...Array(6)].map((__, itemIndex) => _mock.sentence(itemIndex));
 
   const heroUrl = [
-    '/assets/images/travel/travel_post_hero.jpg',
-    '/assets/images/travel/travel_post_01.jpg',
-    '/assets/images/travel/travel_post_02.jpg',
-    '/assets/images/travel/travel_post_03.jpg',
-    '/assets/images/travel/travel_post_04.jpg',
+    '/assets/images/travel/medcare-hospital.png',
+    '/assets/images/travel/medcare-women.png',
+    '/assets/images/travel/medcare-hospital.png',
+    '/assets/images/travel/medcare-women.png',
+    '/assets/images/travel/medcare-hospital.png',
   ][index];
 
   const program = [...Array(3)].map((__, itemIndex) => ({

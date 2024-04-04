@@ -68,7 +68,7 @@ export default function MarketingLandingServices() {
           Our Services
         </Typography>
 
-        <Typography variant="h2">We Provide</Typography>
+        <Typography variant="h2" sx={{ color: 'primary.darker' }}>We Provide</Typography>
 
         {/* <Typography sx={{ color: 'text.secondary' }}>
           Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.

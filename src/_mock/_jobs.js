@@ -120,14 +120,14 @@ export const _jobsByCompanies = [...Array(12)].map((_, index) => ({
 }));
 
 const ICONS = [
-  '/assets/icons/ic_money.svg',
-  '/assets/icons/ic_marketing_bullhorn.svg',
-  '/assets/icons/ic_creativity.svg',
-  '/assets/icons/ic_web_programming.svg',
-  '/assets/icons/ic_chip.svg',
-  '/assets/icons/ic_customer_service.svg',
-  '/assets/icons/ic_stethoscope.svg',
-  '/assets/icons/ic_banking.svg',
+  '/assets/icons/home/cardiology.png',
+  '/assets/icons/home/colorectal.png',
+  '/assets/icons/home/dermatology.png',
+  '/assets/icons/home/endocrine.png',
+  '/assets/icons/home/general-medicine.png',
+  '/assets/icons/home/general-surgery.png',
+  '/assets/icons/home/orthopaedic.png',
+  '/assets/icons/home/ent.png',
 ];
 
 export const _jobsByCategories = [...Array(8)].map((_, index) => ({

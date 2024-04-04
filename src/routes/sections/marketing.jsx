@@ -16,6 +16,10 @@ const ContactUsPage = lazy(() => import('src/pages/marketing/contactus'));
 const ContentPage = lazy(() => import('src/pages/marketing/contentlibrary'));
 const UpdatePage = lazy(() => import('src/pages/marketing/update'));
 const SocialConnectPage = lazy(() => import('src/pages/marketing/socialconnect'));
+const SubscriptionView = lazy(() => import('src/pages/marketing/subscription'));
+const TrialEndedView = lazy(() => import('src/pages/marketing/trialended'));
+
+
 const EmailPage = lazy(() => import('src/pages/marketing/emailcampaign'));
 const SchedulePage = lazy(() => import('src/pages/marketing/schedule'));
 const WhatsappPage = lazy(() => import('src/pages/marketing/whatsappcampaign'));
@@ -48,6 +52,13 @@ export const marketingRoutes = [
       { path: 'contactus', element: <ContactUsPage /> },
       { path: 'update', element: <UpdatePage /> },
       { path: 'socialconnect', element: <SocialConnectPage /> },
+      { path: 'subscription', element: <SubscriptionView /> },
+      { path: 'trialended', element: <TrialEndedView /> },
+
+      
+
+
+
       { path: 'emailcampaign', element: <EmailPage /> },
       { path: 'schedule', element: <SchedulePage /> },
       { path: 'whatsappcampaign', element: <WhatsappPage /> },

@@ -1,10 +1,19 @@
 import * as Yup from 'yup';
+import PropTypes from 'prop-types';
+import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Stack from '@mui/material/Stack';
-import { InputAdornment } from '@mui/material';
 import Container from '@mui/material/Container';
+
+import { fData } from 'src/utils/format-number';
+
+
+
+
+// import { InputAdornment } from '@mui/material';
+
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
@@ -12,8 +21,25 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { useResponsive } from 'src/hooks/use-responsive';
 
 import Image from 'src/components/image';
-import Iconify from 'src/components/iconify';
-import FormProvider, { RHFTextField } from 'src/components/hook-form';
+// import Iconify from 'src/components/iconify';
+import FormProvider, { RHFUpload,RHFTextField,RHFUploadAvatar } from 'src/components/hook-form';
+
+
+// form
+// import { Controller, useFormContext } from 'react-hook-form';
+
+// @mui
+// import { FormHelperText } from '@mui/material';
+
+//
+// import { Upload, UploadBox, UploadAvatar } from '../upload';
+// ----------------------------------------------------------------------
+
+RHFUploadAvatar.propTypes = {
+  name: PropTypes.string,
+};
+
+
 
 
 // ----------------------------------------------------------------------
@@ -55,6 +81,7 @@ export default function MarketingBusinessForm() {
   const {
     reset,
     handleSubmit,
+    setValue,
     formState: { isSubmitting },
   } = methods;
 
@@ -66,6 +93,20 @@ export default function MarketingBusinessForm() {
       console.error(error);
     }
   });
+  const handleDrop = useCallback(
+    (acceptedFiles) => {
+      const file = acceptedFiles[0];
+
+      const newFile = Object.assign(file, {
+        preview: URL.createObjectURL(file),
+      });
+
+      if (file) {
+        setValue('image', newFile, { shouldValidate: true });
+      }
+    },
+[setValue]
+);
 
 
   return (
@@ -110,23 +151,50 @@ export default function MarketingBusinessForm() {
 
 
               <RHFTextField name="phoneNumber"  label="Phone Number"  />
-                <RHFTextField name="logo" label="Logo" InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <Iconify icon="material-symbols-light:upload"  sx={{cursor:'pointer'}}/> 
-             
-            </InputAdornment>
-          ),
-        }} />
+             <RHFTextField name="subject" label="Address"  multiline rows={4}/> 
 
-              <RHFTextField name="subject" label="Address" multiline rows={4}/>
+              {/* <RHFTextField name="logo" label="Logo" multiline rows={4}/> */}
+              <RHFUpload
+                name="image"
+                maxSize={3145728}
+                onDrop={handleDrop}
+                // onRemove={handleRemoveFile}
+                // onRemoveAll={handleRemoveAllFiles}
+                // onUpload={() => console.log('ON UPLOAD')}
+                helperText={
+                  <><Typography
+                    variant="caption"
+                    sx={{
+                      mt: 2,
+                      mx: 'auto',
+                      display: 'block',
+                      textAlign: 'center',
+                      color: 'text.secondary',
+                    }}
+                  >
+               Upload Logo 
+                  </Typography><Typography
+                    variant="caption"
+                    sx={{
+                      mt: 2,
+                      mx: 'auto',
+                      display: 'block',
+                      textAlign: 'center',
+                      color: 'text.secondary',
+                    }}
+                  >
+                   Allowed *.jpeg, *.jpg, *.png, *.gif
+                    <br /> max size of {fData(3145728)}
+                    </Typography></>
+}
+/>
 
 
               <LoadingButton
                 size="large"
                 type="submit"
                 variant="contained"
-                color="inherit"
+                color="primary"
                 loading={isSubmitting}
                 sx={{
                   alignSelf: { xs: 'center', md: 'unset' },

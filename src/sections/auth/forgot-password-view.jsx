@@ -53,7 +53,7 @@ export default function ForgotPasswordView() {
         sx={{ mb: 5, width: 96, height: 96, mx: 'auto' }}
       />
 
-      <Typography variant="h3" paragraph>
+      <Typography variant="h3" paragraph sx={{color:'primary.darker'}}>
         Forgot Your Password?
       </Typography>
 
@@ -77,7 +77,7 @@ export default function ForgotPasswordView() {
         <LoadingButton
           fullWidth
           size="large"
-          color="inherit"
+          color="primary"
           type="submit"
           variant="contained"
           loading={isSubmitting}
@@ -101,7 +101,7 @@ export default function ForgotPasswordView() {
         }}
       >
         <Iconify icon="carbon:chevron-left" width={16} sx={{ mr: 1 }} />
-        Return to sign in
+        Return to  sign in
       </Link>
     </Stack>
   );

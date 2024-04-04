@@ -52,11 +52,11 @@ export default function MarketingLandingHero() {
               Digital Marketing
             </Typography> */}
 
-            <Typography variant="h1" sx={{ my: 3 }}>
+            <Typography variant="h1" sx={{ my: 3,color:'primary.darker' }}>
               Dive into the world of influence
             </Typography>
 
-            <Typography sx={{ color: 'text.secondary' }}>
+            <Typography sx={{ color: 'primary.dark' }}>
              our social media mastery ensures your brand not only stands out but stays ahead
             </Typography>
 
@@ -67,7 +67,7 @@ export default function MarketingLandingHero() {
               justifyContent={{ xs: 'center', md: 'unset' }}
               sx={{ mt: 5 }}
             >
-              <Button variant="contained" color="inherit" size="large">
+              <Button variant="contained" color="primary" size="large">
                 Get Started
               </Button>
 

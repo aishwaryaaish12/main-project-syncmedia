@@ -4,7 +4,7 @@ import MarketingSocialConnectPage from 'src/sections/_marketing/view/marketing-s
 
 // ----------------------------------------------------------------------
 
-export default function MarketingServicesPage() {
+export default function MarketingSocialconnectPage() {
   return (
     <>
       <Helmet>

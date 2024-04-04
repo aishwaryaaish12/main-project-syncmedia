@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 // import { useState, useCallback } from 'react';
 
 // import Box from '@mui/material/Box';
+
 import Card from '@mui/material/Card';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
@@ -22,7 +23,7 @@ import TextMaxLine from 'src/components/text-max-line';
 
 export default function TravelTourItem({ imagesAndLinks }) {
   const { imageUrl,name,linkUrl } = imagesAndLinks ;
-
+  console.log(imageUrl);
   // // // const [favorite, setFavorite] = useState(favorited);
 
   // // const handleChangeFavorite = useCallback((event) => {
@@ -30,7 +31,7 @@ export default function TravelTourItem({ imagesAndLinks }) {
   //  }, []);
 
   return (
-    <Card>
+    <Card sx={{height:'500px'}}>
       <Stack
         direction="row"
         alignItems="center"
@@ -80,7 +81,7 @@ export default function TravelTourItem({ imagesAndLinks }) {
         /> */}
       </Stack> 
 
-      <Image  src={imageUrl} ratio="1/1" />
+      <Image  src={imageUrl}  sx={{ width: '300px',height:'250px' }}  />
 
       <Stack spacing={0.5} sx={{ p: 2.5 }}>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
