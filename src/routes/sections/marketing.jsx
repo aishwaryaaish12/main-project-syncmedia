@@ -20,6 +20,17 @@ const SubscriptionView = lazy(() => import('src/pages/marketing/subscription'));
 const TrialEndedView = lazy(() => import('src/pages/marketing/trialended'));
 
 
+const EmailPage = lazy(() => import('src/pages/marketing/emailcampaign'));
+const SchedulePage = lazy(() => import('src/pages/marketing/schedule'));
+const WhatsappPage = lazy(() => import('src/pages/marketing/whatsappcampaign'));
+const EcampaignPage = lazy(() => import('src/pages/marketing/ecampaign'));
+const WcampaignPage = lazy(() => import('src/pages/marketing/wcampaign'));
+const UploadPage = lazy(() => import('src/pages/marketing/upload'));
+const CalendarPage = lazy(() => import('src/pages/marketing/calendar'));
+const EmailtemplatePage = lazy(() => import('src/pages/marketing/emailtemplate'));
+const WhatsapptemplatePage = lazy(() => import('src/pages/marketing/whatsapptemplate'));
+const DraftPage = lazy(() => import('src/pages/marketing/draft'));
+const UnsubscribePage = lazy(() => import('src/pages/marketing/unsubscribe'));
 
 // ----------------------------------------------------------------------
 
@@ -48,6 +59,17 @@ export const marketingRoutes = [
 
 
 
+      { path: 'emailcampaign', element: <EmailPage /> },
+      { path: 'schedule', element: <SchedulePage /> },
+      { path: 'whatsappcampaign', element: <WhatsappPage /> },
+      { path: 'ecampaign', element: <EcampaignPage /> },
+      { path: 'wcampaign', element: <WcampaignPage /> },
+      { path: 'upload', element: <UploadPage /> },
+      { path: 'calendar', element: <CalendarPage /> },
+      { path: 'emailtemplate', element: <EmailtemplatePage /> },
+      { path: 'whatsapptemplate', element: <WhatsapptemplatePage /> },
+      { path: 'draft', element: <DraftPage /> },
+      { path: 'unsubscribe', element: <UnsubscribePage /> },
     ],
   },
 ];

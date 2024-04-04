@@ -86,7 +86,7 @@ export function RHFUpload({ name, multiple, helperText, ...other }) {
         return multiple ? (
           <Upload
             multiple
-            accept={{ 'image/*': [], 'application/pdf': ['.pdf'] }}
+            accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'], 'video/*':['.mp4','.mov','.avi'] ,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],}}
             files={field.value}
             error={!!error}
             helperText={
@@ -100,7 +100,7 @@ export function RHFUpload({ name, multiple, helperText, ...other }) {
           />
         ) : (
           <Upload
-            accept={{ 'image/*': [], 'application/pdf': ['.pdf'] }}
+            accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'], 'video/*':['.mp4','.mov','.avi'], 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],  }}
             file={field.value}
             error={!!error}
             helperText={
@@ -114,6 +114,6 @@ export function RHFUpload({ name, multiple, helperText, ...other }) {
           />
         );
       }}
-  />
-  );
+/>
+);
 }

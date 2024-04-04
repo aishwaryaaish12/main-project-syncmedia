@@ -99,5 +99,5 @@ export const hideScrollbarX = {
   overflowX: 'scroll',
   '&::-webkit-scrollbar': {
     display:'none',
-},
+  },
 };

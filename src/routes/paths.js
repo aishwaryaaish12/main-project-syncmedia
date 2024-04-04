@@ -11,7 +11,7 @@ export const paths = {
     post: `/marketing/post`,
     about: '/marketing/about',
     contact: '/marketing/contact',
-    contet: '/marketing/content',
+    content: '/marketing/content',
     loghome: '/marketing/loghome',
     business:'/marketing/business',
     contactus:'/marketing/contactus',
@@ -21,11 +21,17 @@ export const paths = {
     trialended:'/marketing/trialended',
     
 
-
-
-
-
-
+    emailcampaign:'/marketing/emailcampaign',
+    schedule: '/marketing/schedule',
+    whatsappcampaign:'/marketing/whatsappcampaign',
+    ecampaign: '/marketing/ecampaign',
+    wcampaign: '/marketing/wcampaign',
+    upload: '/marketing/upload',
+    calendar: '/marketing/calendar',
+    emailtemplate: '/marketing/emailtemplate',
+    whatsapptemplate: '/marketing/whatsapptemplate',
+    draft: '/marketing/draft',
+    unsubscribe: '/marketing/unsubscribe',
   },
   // Travel
   travel: {
