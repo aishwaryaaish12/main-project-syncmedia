@@ -43,22 +43,24 @@ export default function MarketingTrialEndedView() {
         </Stack>
       </Stack>
 
-      <Card sx={{ width: '400px', height: '530px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.2)' }, }}>
+      <Card sx={{ width: '430px', height: '570px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.2)' }, }}>
         <Box p={3}>
-          <Typography variant="h3" color='primary'>
+        <Image src='/assets/icons/ic_agreement.svg' sx={{ width: '50px', height: '50px',top: 30,color:'gray',mb:'8px' }} />
+
+          <Typography variant="h3" color='primary' sx={{mt:'35px'}}>
             POPULAR
           </Typography>
-          <Image src='/assets/icons/pricing/ic_plan_starter03.svg' sx={{ width: '30px', height: '30px', position: 'absolute', top: 30, right: 32 }} />
+          <Typography variant="body1" align="center" sx={{ mt: 4 }}>
+          Your 14-days free trial has expired. To continue access to SyncMedia Hub Please Subscribe now.
+          </Typography>
+
           <Stack direction="row" alignItems="center" spacing={0.5}>
-            <Typography variant="h4" component="span" sx={{ mt: 3 }}>$100</Typography>
+            <Typography variant="h4" component="span" sx={{ mt: 3,alignItems:"center" }}>$100</Typography>
             <Typography variant="h5" component="span" sx={{ color: 'text.disabled', mt: 3 }}>
               /yearly
             </Typography>
           </Stack>
 
-          <Typography variant="body1" align="center" sx={{ mt: 4 }}>
-          Your 14-days free trial has ended.
-          </Typography>
           <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 5 }}>
             <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> Cross-Platform Posting
           </Stack>
@@ -70,8 +72,8 @@ export default function MarketingTrialEndedView() {
           </Stack>
 
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 9 }}>
-            <Button variant="contained" color="primary" sx={{ height: '43px' }}>
-              Start your Free Trial
+            <Button variant="contained" color="primary" sx={{ height: '43px',fontSize:'20px' }}>
+              Subscribe Now
             </Button>
           </Box>
         </Box>

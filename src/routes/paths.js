@@ -13,12 +13,12 @@ export const paths = {
     contact: '/marketing/contact',
     contet: '/marketing/content',
     loghome: '/marketing/loghome',
-    business:'marketing/business',
-    contactus:'marketing/contactus',
-    update:'marketing/update',
-    socialconnect:'marketing/socialconnect',
-    subscription:'marketing/subscription',
-    trialended:'marketing/trialended',
+    business:'/marketing/business',
+    contactus:'/marketing/contactus',
+    update:'/marketing/update',
+    socialconnect:'/marketing/socialconnect',
+    subscription:'/marketing/subscription',
+    trialended:'/marketing/trialended',
     
 
 
