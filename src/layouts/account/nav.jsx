@@ -16,7 +16,7 @@ import { RouterLink } from 'src/routes/components';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
-import { _mock } from 'src/_mock';
+import {_mock}  from 'src/_mock';
 
 import Iconify from 'src/components/iconify';
 import TextMaxLine from 'src/components/text-max-line';

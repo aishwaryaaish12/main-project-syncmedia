@@ -31,11 +31,11 @@ export default function TravelTourItemNew({ imagesAndsocialLinks }) {
     window.location.href = linkUrl;
   };
   const addBoxShadow = (e) => {
-    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+    e.currentTarget.style.boxShadow = '0 8px 16px rgba(15, 15, 15, 0.3)';
   };
 
   const removeBoxShadow = (e) => {
-    e.currentTarget.style.boxShadow = 'none';
+    e.currentTarget.style.boxShadow = '0 3px 10px rgba(10, 10, 10, 0.15)';
   };
   // // // const [favorite, setFavorite] = useState(favorited);
 
@@ -51,12 +51,16 @@ export default function TravelTourItemNew({ imagesAndsocialLinks }) {
     <Card  
     onMouseEnter={addBoxShadow}
       onMouseLeave={removeBoxShadow}
-      sx={{ transition: 'box-shadow 0.5s', 
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Add a slight box shadow
-
+      sx={{ transition: 'transform 0.3s ease', 
+      boxShadow: '0 3px 10px rgba(10, 10, 10, 0.15)', // Initial box shadow
+      width:'300px',height:'300px',
       '&:hover': {
-        boxShadow: (theme) => theme.customShadows.z24,
-      },width:'300px',height:'300px'
+        transform: 'translateY(5px)', 
+        boxShadow: '0 16px 32px rgba(15, 15, 15, 0.6)', // Larger box shadow after hovering
+
+
+        // boxShadow: (theme) => theme.customShadows.z24,
+      }
 
     }}
 
@@ -117,7 +121,7 @@ export default function TravelTourItemNew({ imagesAndsocialLinks }) {
         /> */}
       </Stack> 
 
-      <Image sx={{width:'100px', height:'100px',ml:'85px',mt:'20px'}} src={imageUrl} ratio="1/1" />
+      <Image sx={{width:'70px', height:'70px',ml:'100px',mt:'30px'}} src={imageUrl} ratio="1/1" />
 
       <Stack spacing={0.5} sx={{ p: 2.5 }}>
         <Typography variant="body2" sx={{ color: 'text.secondary',ml:'85px',mt:'35px' }}>

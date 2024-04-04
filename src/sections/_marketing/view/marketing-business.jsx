@@ -194,7 +194,7 @@ export default function MarketingBusinessForm() {
                 size="large"
                 type="submit"
                 variant="contained"
-                color="inherit"
+                color="primary"
                 loading={isSubmitting}
                 sx={{
                   alignSelf: { xs: 'center', md: 'unset' },

@@ -54,7 +54,7 @@ export default function MarketingLandingProcess() {
           Work Flow
         </Typography>
 
-        <Typography variant="h2">Working Process</Typography>
+        <Typography variant="h2" sx={{color:'primary.darker'}}>Working Process</Typography>
 
         {/* <Typography sx={{ color: 'text.secondary' }}>
           Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.

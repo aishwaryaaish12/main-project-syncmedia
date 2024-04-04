@@ -18,7 +18,9 @@ export const paths = {
     update:'marketing/update',
     socialconnect:'marketing/socialconnect',
     subscription:'marketing/subscription',
-    adminhome:'marketing/adminhome',
+    trialended:'marketing/trialended',
+    
+
 
 
 
@@ -123,4 +125,51 @@ export const paths = {
   zoneStore: 'https://mui.com/store/items/zone-landing-page/',
   figmaPreview:
     'https://www.figma.com/file/Zam9QBLhV4pZf5xtNs0Lf8/%5BPreview%5D-Zone_Web.v2.3.0?type=design&node-id=59%3A680507&mode=design&t=GCVeJci5zfUu5WCy-1',
+};
+
+function path(root, sublink) {
+  return `${root}${sublink}`;
+}
+
+const ROOTS_AUTH = '/auth';
+const ROOTS_DASHBOARD='/dashboard';
+
+export const PATH_AUTH = {
+  root: ROOTS_AUTH,
+  login: path(ROOTS_AUTH, '/login-cover'),
+  register: path(ROOTS_AUTH, '/register'),
+  loginUnprotected: path(ROOTS_AUTH, '/login-unprotected'),
+  registerUnprotected: path(ROOTS_AUTH, '/register-unprotected'),
+  verify: path(ROOTS_AUTH, '/verify'),
+  resetPassword: path(ROOTS_AUTH, '/reset-password'),
+  newPassword: path(ROOTS_AUTH, '/new-password'),
+};
+
+export const PATH_DASHBOARD = {
+  root: ROOTS_DASHBOARD,
+  calendar: path(ROOTS_DASHBOARD, '/calendar'),
+  permissionDenied: path(ROOTS_DASHBOARD, '/permission-denied'),
+  blank: path(ROOTS_DASHBOARD, '/blank'),
+  general: {
+    app: path(ROOTS_DASHBOARD, '/app'),
+    analytics: path(ROOTS_DASHBOARD, '/analytics'),
+    booking: path(ROOTS_DASHBOARD, '/booking'),
+  },
+
+  user: {
+    root: path(ROOTS_DASHBOARD, '/user'),
+    new: path(ROOTS_DASHBOARD, '/user/new'),
+    list: path(ROOTS_DASHBOARD, '/user/list'),
+    cards: path(ROOTS_DASHBOARD, '/user/cards'),
+    profile: path(ROOTS_DASHBOARD, '/user/profile'),
+    account: path(ROOTS_DASHBOARD, '/user/account'),
+    edit: (name) => path(ROOTS_DASHBOARD,`/user/${name}/edit`),
+    demoEdit: path(ROOTS_DASHBOARD, `/user/reece-chung/edit`),
+  },
+  socialmedia:{
+   root:path(ROOTS_DASHBOARD, '/socialmedia'),
+    new:path(ROOTS_DASHBOARD, '/socialmedia/new'),
+    list:path(ROOTS_DASHBOARD, '/socialmedia/list'),
+  }
+  
 };

@@ -8,14 +8,16 @@ import Typography from '@mui/material/Typography';
 import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 
-
-
 export default function MarketingSubscriptionView() {
   return (
     <Container
       sx={{
-        pt: 10,
-        pb: { xs: 5, md: 10 }
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh', // Ensure full viewport height
+        textAlign: 'center', // Center text
       }}
     >
       <Stack
@@ -33,7 +35,7 @@ export default function MarketingSubscriptionView() {
             textAlign: { xs: 'center', md: 'unset' },
           }}
         >
-          <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+          <Typography variant="overlined" sx={{ color: 'text.disabled' }}>
             Pricing
           </Typography>
 
@@ -41,20 +43,15 @@ export default function MarketingSubscriptionView() {
         </Stack>
       </Stack>
 
-      <Card sx={{ width: '400px', height: '530px',align:'center',boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-          transition: 'box-shadow 0.3s',
-          '&:hover': {
-            boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.2)',
-          },}}>
+      <Card sx={{ width: '400px', height: '530px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.2)' }, }}>
         <Box p={3}>
-          <Typography variant="h3" color='primary' >
+          <Typography variant="h3" color='primary'>
             POPULAR
           </Typography>
-          <Image src='/assets/icons/pricing/ic_plan_starter03.svg'
-          sx={{width:'30px',height:'30px' ,position: 'absolute', top: 30, right: 32}} />
+          <Image src='/assets/icons/pricing/ic_plan_starter03.svg' sx={{ width: '30px', height: '30px', position: 'absolute', top: 30, right: 32 }} />
           <Stack direction="row" alignItems="center" spacing={0.5}>
-            <Typography variant="h4" component="span" sx={{mt:3}}>$100</Typography>
-            <Typography variant="h5" component="span" sx={{ color: 'text.disabled',mt:3 }}>
+            <Typography variant="h4" component="span" sx={{ mt: 3 }}>$100</Typography>
+            <Typography variant="h5" component="span" sx={{ color: 'text.disabled', mt: 3 }}>
               /yearly
             </Typography>
           </Stack>
@@ -62,21 +59,21 @@ export default function MarketingSubscriptionView() {
           <Typography variant="body1" align="center" sx={{ mt: 4 }}>
             Enjoy your 14-days Free Trial. After the trial period, you will need to subscribe to continue accessing our services.
           </Typography>
-          <Stack  direction="row" alignItems="center" sx={{ typography: 'body2' ,mt:5}}>
+          <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 5 }}>
             <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> Cross-Platform Posting
           </Stack>
-          <Stack  direction="row" alignItems="center" sx={{ typography: 'body2' ,mt:3}}>
+          <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 3 }}>
             <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> Manage Posts
           </Stack>
-          <Stack  direction="row" alignItems="center" sx={{ typography: 'body2' ,mt:3}}>
+          <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 3 }}>
             <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> Campaign
           </Stack>
 
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 9 }}>
-            <Button variant="contained" color="primary" sx={{height:'40px'}}>
+            <Button variant="contained" color="primary" sx={{ height: '43px' }}>
               Start your Free Trial
             </Button>
-          </Box> 
+          </Box>
         </Box>
       </Card>
 

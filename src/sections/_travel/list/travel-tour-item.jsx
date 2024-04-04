@@ -31,7 +31,7 @@ export default function TravelTourItem({ imagesAndLinks }) {
   //  }, []);
 
   return (
-    <Card>
+    <Card sx={{height:'500px'}}>
       <Stack
         direction="row"
         alignItems="center"
@@ -81,7 +81,7 @@ export default function TravelTourItem({ imagesAndLinks }) {
         /> */}
       </Stack> 
 
-      <Image  src={imageUrl}  sx={{ width: '20px',height:'20px' }}  />
+      <Image  src={imageUrl}  sx={{ width: '300px',height:'250px' }}  />
 
       <Stack spacing={0.5} sx={{ p: 2.5 }}>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>

@@ -12,6 +12,7 @@ import { LocalizationProvider } from 'src/locales';
 import ProgressBar from 'src/components/progress-bar';
 import { MotionLazy } from 'src/components/animate/motion-lazy';
 import { SettingsDrawer, SettingsProvider } from 'src/components/settings';
+import { AuthProvider } from './auth/JwtContext';
 
 // ----------------------------------------------------------------------
 
@@ -19,6 +20,7 @@ export default function App() {
   useScrollToTop();
 
   return (
+    <AuthProvider>
     <LocalizationProvider>
       <SettingsProvider
         defaultSettings={{
@@ -36,5 +38,6 @@ export default function App() {
         </ThemeProvider>
       </SettingsProvider>
     </LocalizationProvider>
+    </AuthProvider>
   );
 }

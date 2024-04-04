@@ -30,6 +30,7 @@ export const _socials = [
     value: 'facebook',
     label: 'FaceBook',
     icon: 'carbon:logo-facebook',
+    // url:'/assets/icons/home/fb.png',
     color: '#1877F2',
   },
   {
