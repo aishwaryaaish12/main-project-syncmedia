@@ -8,7 +8,7 @@ export default function MarketingWhatsappPage() {
   return (
     <>
       <Helmet>
-        <title> Marketing: whatsapp campaign</title>
+        <title>Whatsappcampaign Form</title>
       </Helmet>
 
       <MarketingWhatsappView />

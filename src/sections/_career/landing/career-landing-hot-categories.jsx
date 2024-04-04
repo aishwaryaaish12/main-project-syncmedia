@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-import Iconify from 'src/components/iconify';
+// import Iconify from 'src/components/iconify';
 import SvgColor from 'src/components/svg-color';
 import TextMaxLine from 'src/components/text-max-line';
 
@@ -42,7 +42,7 @@ export default function CareerLandingHotCategories({ categories }) {
         ))}
       </Box>
 
-      <Stack alignItems="center">
+      {/* <Stack alignItems="center">
         <Button
           color="inherit"
           size="large"
@@ -51,7 +51,7 @@ export default function CareerLandingHotCategories({ categories }) {
         >
           View All Categories
         </Button>
-      </Stack>
+      </Stack> */}
     </Container>
   );
 }

@@ -3,19 +3,19 @@
 // import ContactMap from 'src/components/map';
 
 // import CareerNewsletter from '../career-newsletter';
-import MarketingContent2Form from '../contentlibrary2/marketing-content2-form';
+import MarketingUploadForm from '../upload/marketing-upload-form'
 // import CareerContactInfo from '../contact/career-contact-info';
 
 // ----------------------------------------------------------------------
 
-export default function MarketingContent2View() {
+export default function MarketingUploadView() {
   return (
     <>
       {/* <CareerContactInfo /> */}
 
       {/* <ContactMap offices={_offices} /> */}
 
-      <MarketingContent2Form />
+      <MarketingUploadForm />
 
       {/* <CareerNewsletter /> */}
     </>

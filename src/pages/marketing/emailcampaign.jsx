@@ -8,7 +8,7 @@ export default function MarketingEmailPage() {
   return (
     <>
       <Helmet>
-        <title> Marketing: Email campaign</title>
+        <title> Emailcampaign Form</title>
       </Helmet>
 
       <MarketingEmailView />

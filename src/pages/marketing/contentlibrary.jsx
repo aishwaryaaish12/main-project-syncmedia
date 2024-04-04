@@ -8,7 +8,7 @@ export default function MarketingContentPage() {
   return (
     <>
       <Helmet>
-        <title> Marketing: Content</title>
+        <title> Content Library</title>
       </Helmet>
 
       <MarketingContentView />

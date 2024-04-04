@@ -14,7 +14,7 @@ export default function SingleFilePreview({ file }) {
 
   const isVideo = file.type ? file.type.startsWith('video/') : false;
 
-  const isText = file.type ? file.type.startsWith('text/') : false;
+  const isExcel = file.type ? file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' : false;
 
   if (isImage) {
     return (
@@ -54,27 +54,28 @@ export default function SingleFilePreview({ file }) {
     );
   }
 
-  if (isText) {
-    // For text files, display the file content
+  
+  
+  if (isExcel) {
     return (
-      <pre
-        style={{
-          top: 8,
-          left: 8,
+
+        <div style={{
+          top: '50%',
+          left: '50%',
           zIndex: 8,
-          borderRadius: 1,
+          border: '1px solid #ccc',
+          borderRadius: 5,
           position: 'absolute',
-          width: 'calc(100% - 16px)',
-          height: 'calc(100% - 16px)',
-          overflow: 'auto',
-          whiteSpace: 'pre-wrap',
-          wordWrap: 'break-word',
-        }}
-      >
-        {fileUrl}
-      </pre>
+          transform: 'translate(-50%, -50%)',
+          padding: '10px',
+          maxWidth: '100%',
+        }}>
+          <strong>Excel File Selected:</strong> {file.name}
+        </div>
     );
   }
+
+  
 
   return null;
 }

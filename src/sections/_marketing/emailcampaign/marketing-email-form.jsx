@@ -8,6 +8,10 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import LoadingButton from '@mui/lab/LoadingButton';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 
 import { fData } from 'src/utils/format-number';
 
@@ -20,10 +24,11 @@ export default function MarketingEmailForm() {
     campaignName: Yup.string().required('Campaign name is required'),
     subject: Yup.string().required('subject is required'),
     description: Yup.string().required('Description is required'),
-    link: Yup.string().required('Link is required'),
+    link: Yup.string().url('Invalid URL format').required('Link is required'),
     image: Yup.mixed().required('Image is required'),
-    from: Yup.string().required('From address is required'),
+    from: Yup.string().email('Invalid email format').required('From address is required'),
     to: Yup.mixed().required('To address file is required'),
+    scheduleCampaign: Yup.date().required('Date and time is required'),
   });
 
   const defaultValues = {
@@ -34,6 +39,7 @@ export default function MarketingEmailForm() {
     image: '',
     from: '',
     to: '',
+    scheduleCampaign: new Date() || null,
   };
 
   const methods = useForm({
@@ -45,7 +51,7 @@ export default function MarketingEmailForm() {
     reset,
     handleSubmit,
     setValue,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = methods;
 
   const onSubmit = handleSubmit(async (data) => {
@@ -97,11 +103,7 @@ export default function MarketingEmailForm() {
       <Grid container spacing={3} justifyContent="center">
         <Grid xs={12} md={8}>
           <Stack spacing={2} sx={{ mb: 5, textAlign: 'center' }}>
-            <Typography variant="h3">Create Your Email Campaign Here</Typography>
-
-            {/* <Typography sx={{ color: 'text.secondary' }}>
-              We normally respond within 2 business days
-            </Typography> */}
+            <Typography variant="h3"color='primary.darker'>Create Your Email Campaign Here</Typography>
           </Stack>
 
           <FormProvider methods={methods} onSubmit={onSubmit}>
@@ -112,85 +114,76 @@ export default function MarketingEmailForm() {
               <RHFTextField name="link" label="Link" />
               <RHFUpload
                 name="image"
-                maxSize={1048576}
+                maxSize={52428800}
                 onDrop={handleDropImage}
-
-                // onRemove={handleRemoveFile}
-                // onRemoveAll={handleRemoveAllFiles}
-                // onUpload={() => console.log('ON UPLOAD')}
+                accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.gif'] }} // Only accept image files
+                error={errors.image?.message}
                 helperText={
-                  <>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                     Upload image
-                    </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                    Allowed *.jpeg, *.jpg, *.png, *.gif
-                    <br /> max size of {fData(1048576)}
-                  </Typography></>
-                }
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          mt: 2,
+                          mx: 'auto',
+                          display: 'block',
+                          textAlign: 'center',
+                          color: 'text.secondary',
+                        }}
+                      >
+                        Select the image
+                      </Typography>
+                  }
               />
               <RHFTextField name="from" label="From" />
               <RHFUpload
-                name="to"
-                maxSize={3145728}
-                onDrop={handleDropTo}
-                // onRemove={handleRemoveFile}
-                // onRemoveAll={handleRemoveAllFiles}
-                // onUpload={() => console.log('ON UPLOAD')}
-                helperText={
-                  <><Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                    Upload To address file
-                  </Typography><Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                      Allowed *.jpeg, *.jpg, *.png, *.gif
-                      <br /> max size of {fData(3145728)}
-                    </Typography></>
-                }
-              /> 
+                  name="to"
+                  maxSize={3145728}
+                  onDrop={handleDropTo}
+                  accept={{ 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'] }} // Only accept Excel files
+                  helperText={
+                    <>
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          mt: 2,
+                          mx: 'auto',
+                          display: 'block',
+                          textAlign: 'center',
+                          color: 'text.secondary',
+                        }}
+                      >
+                        Upload To address EXCEL file
+                      </Typography>
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          mt: 2,
+                          mx: 'auto',
+                          display: 'block',
+                          textAlign: 'center',
+                          color: 'text.secondary',
+                        }}
+                      >
+                        Allowed *.xlsx files
+                        <br /> max size of {fData(3145728)}
+                      </Typography>
+                    </>
+                  }
+                />
+                <DateTimePicker
+                label="Schedule Campaign"
+                name="scheduleCampaign"
+              />
 
 
 
               <Stack  alignItems="center" width={1}>
                 <LoadingButton
+                  component={RouterLink}
+                  href={paths.marketing.emailtemplate}
                   size="large"
                   type="submit"
                   variant="contained"
-                  color="inherit"
+                  color="primary"
                   loading={isSubmitting}
                 >
                   Create

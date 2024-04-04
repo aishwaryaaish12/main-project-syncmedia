@@ -4,19 +4,20 @@
 // import { yupResolver } from '@hookform/resolvers/yup';
 
 // import { Button } from '@mui/material';
-// import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 // import LoadingButton from '@mui/lab/LoadingButton';
 
-// import { paths } from 'src/routes/paths';
+import { paths } from 'src/routes/paths';
 // import { RouterLink } from 'src/routes/components';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
 // import { fData } from 'src/utils/format-number';
+
+import { useNavigate } from 'react-router';
 
 import { Button } from '@mui/material';
 
@@ -26,39 +27,17 @@ import Image from 'src/components/image';
 // ----------------------------------------------------------------------
 
 export default function MarketingEcamForm() {
+  const navigate = useNavigate()
+  const navigateToEmailCampaign = ()=>{
+  navigate(paths.marketing.emailcampaign)
+  }
+
+  const navigateToAllCampaign = ()=>{
+  navigate(paths.marketing.draft)
+  }
+  
   const mdUp = useResponsive('up', 'md');
 
-  // const TravelContactSchema = Yup.object().shape({
-  //   blog: Yup.string().required('Blog is required'),
-  //   description: Yup.string().required('Description is required'),
-  // });
-
-  // const defaultValues = {
-  //   blog: '',
-  //   description: '',
-  // };
-
-  // const methods = useForm({
-  //   resolver: yupResolver(TravelContactSchema),
-  //   defaultValues,
-  // });
-
-  // const {
-  //   reset,
-  //   handleSubmit,
-  //   formState: { isSubmitting },
-  // } = methods;
-
-  // const onSubmit = handleSubmit(async (data) => {
-  //   try {
-  //     console.log('DATA', data);
-  //     reset();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // });
-
-  
   return (
     <Container
       sx={{
@@ -84,45 +63,28 @@ export default function MarketingEcamForm() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            <Typography variant="h3" sx={{ml:{xs:0,md:20}}}>Email Campaign</Typography>
+            <Typography variant="h3" color='primary.darker'sx={{ml:{xs:0,md:20,textShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)' }}} >Email Campaign</Typography>
 
-            {/* <Typography sx={{ color: 'text.secondary' }}>
-              We normally respond within 2 business days
-            </Typography> */}
           </Stack>
           <Stack direction='column' spacing={2}>
+            {
+              console.log(paths.marketing.emailcampaign)
+            }
           <Button
+          onClick={navigateToEmailCampaign}
           size="large"
-          type="submit"
           variant="contained"
-          color="inherit">
+          color="primary"
+        >
           Create Campaign
-        </Button>
+          </Button>
           <Button
+          onClick={navigateToAllCampaign}
           size="large"
-          type="submit"
           variant="contained"
-          color="inherit">All Campaign</Button>
+          color="primary">All Campaign</Button>
           </Stack>
-          {/* <FormProvider methods={methods} onSubmit={onSubmit}>
-            <Stack spacing={2.5} alignItems="flex-start">
-              <RHFTextField name="blog" multiline rows={6} label="Create Your Blog Here" sx={{pb:1}}/>
-              <RHFTextField name="description" multiline rows={4} label="Enter the description" sx={{ pb: 2.5 }} />
-
-              <LoadingButton
-                size="large"
-                type="submit"
-                variant="contained"
-                color="inherit"
-                loading={isSubmitting}
-                sx={{
-                  alignSelf: { xs: 'center', md: 'unset' },
-                }}
-              >
-                Schedule
-              </LoadingButton>
-            </Stack>
-          </FormProvider> */}
+          
         </Grid>
       </Grid>
     </Container>

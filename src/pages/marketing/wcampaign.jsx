@@ -8,7 +8,7 @@ export default function MarketingWcampaignPage() {
   return (
     <>
       <Helmet>
-        <title> Marketing: whatsapp campaign front page</title>
+        <title>Whatsappcampaign Front page</title>
       </Helmet>
 
       <MarketingWcamView />

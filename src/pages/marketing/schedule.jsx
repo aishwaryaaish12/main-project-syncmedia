@@ -8,7 +8,7 @@ export default function MarketingSchedulePage() {
   return (
     <>
       <Helmet>
-        <title> Marketing: Content</title>
+        <title>Schedule</title>
       </Helmet>
 
       <MarketingScheduleView />

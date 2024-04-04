@@ -3,7 +3,7 @@
 // import ContactMap from 'src/components/map';
 
 // import CareerNewsletter from '../career-newsletter';
-import MarketingEmailForm from '../Email/marketing-email-form';
+import MarketingEmailForm from '../emailcampaign/marketing-email-form';
 // import CareerContactInfo from '../contact/career-contact-info';
 
 // ----------------------------------------------------------------------

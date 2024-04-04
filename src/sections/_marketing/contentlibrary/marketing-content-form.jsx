@@ -1,57 +1,89 @@
 import * as Yup from 'yup';
-import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+import { useState, useCallback } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 // import Link from '@mui/material/Link';
-import { Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
-import LoadingButton from '@mui/lab/LoadingButton';
 
-// import { paths } from 'src/routes/paths';
-// import { RouterLink } from 'src/routes/components';
+// import LoadingButton from '@mui/lab/LoadingButton';
 
-import { useResponsive } from 'src/hooks/use-responsive';
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 
-import { fData } from 'src/utils/format-number';
+// import { useResponsive } from 'src/hooks/use-responsive';
+
+// import { fData } from 'src/utils/format-number';
 
 import Image from 'src/components/image';
-import FormProvider, {RHFUpload,RHFTextField } from 'src/components/hook-form';
+import FormProvider, { RHFUpload, RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 
 export default function MarketingContentForm() {
-  const mdUp = useResponsive('up', 'md');
+  // const mdUp = useResponsive('up', 'md');
+  const [activeButton, setActiveButton] = useState('image'); // Default to video button
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [selectedContent, setSelectedContent] = useState([]);
 
-  const TravelContactSchema = Yup.object().shape({
-    image: Yup.string().required('Image is required'),
+  const handleButtonClick = (buttonType) => {
+    setActiveButton(buttonType);
+    setSnackbarMessage('');
+    setSnackbarOpen(false);
+    setSelectedContent([buttonType]);
+  };
+
+
+  const MarketingContentSchema = Yup.object().shape({
+    image: Yup.string().when('type', {
+      is: 'image',
+      then: Yup.string().required('Image is required'),
+    }),
+    video: Yup.string().when('type', {
+      is: 'video',
+      then: Yup.string().required('Video is required'),
+    }),
+    blog: Yup.string().when('type', {
+      is: 'blog',
+      then: Yup.string().required('Blog is required'),
+    }),
     description: Yup.string().required('Description is required'),
   });
 
   const defaultValues = {
     image: '',
+    video: '',
+    blog: '',
     description: '',
   };
 
   const methods = useForm({
-    resolver: yupResolver(TravelContactSchema),
+    resolver: yupResolver(MarketingContentSchema),
     defaultValues,
   });
 
   const {
-    reset,
     handleSubmit,
     setValue,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = methods;
 
   const onSubmit = handleSubmit(async (data) => {
     try {
+      if (selectedContent.length !== 1) {
+        setSnackbarMessage('Select only one content type.');
+        setSnackbarOpen(true);
+        return;
+      }
+
       console.log('DATA', data);
-      reset();
+      methods.reset();
     } catch (error) {
       console.error(error);
     }
@@ -61,16 +93,25 @@ export default function MarketingContentForm() {
     (acceptedFiles) => {
       const file = acceptedFiles[0];
 
-      const newFile = Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      });
+      if (activeButton === 'image' && file.type.startsWith('image/')) {
+        const newFile = Object.assign(file, {
+          preview: URL.createObjectURL(file),
+        });
+        setValue(activeButton, newFile, { shouldValidate: true });
+      }
 
-      if (file) {
-        setValue('image', newFile, { shouldValidate: true });
+      // Check if the active button is 'video' and if the dropped file's type starts with 'video/'
+      if (activeButton === 'video' && file.type.startsWith('video/')) {
+        const newFile = Object.assign(file, {
+          preview: URL.createObjectURL(file),
+        });
+        setValue(activeButton, newFile, { shouldValidate: true });
       }
     },
-    [setValue]
+    [setValue, activeButton]
   );
+
+
 
   return (
     <Container
@@ -79,14 +120,30 @@ export default function MarketingContentForm() {
       }}
     >
       <Grid container spacing={3} justifyContent="space-between">
-        {mdUp && (
-          <Grid xs={12} md={6} lg={5}>
-            <Image sx={{width:'100%', mt:10}}
-              alt=" "
+        <Grid xs={12} md={6} lg={5}>
+          {activeButton === 'image' && (
+            <Image
+              sx={{ width: '100%', mt: 10 }}
+              alt=""
               src="/assets/illustrations/contentlibrary_image.svg"
             />
-          </Grid>
-        )}
+          )}
+          {activeButton === 'video' && (
+            <Image
+              sx={{ width: '100%', mt: 10 }}
+              alt=""
+              src="/assets/illustrations/contentlibrary_video.svg"
+            />
+          )}
+          {activeButton === 'blog' && (
+            <Image
+              sx={{ width: '100%', mt: 10 }}
+              alt=""
+              src="/assets/illustrations/contentlibrary_blog.svg"
+            />
+          )}
+        </Grid>
+
 
         <Grid xs={12} md={6} lg={6}>
           <Stack
@@ -96,91 +153,100 @@ export default function MarketingContentForm() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            <Typography variant="h3">Content Library</Typography>
-
-            {/* <Typography sx={{ color: 'text.secondary' }}>
-              We normally respond within 2 business days
-            </Typography> */}
+            <Typography variant="h3" color='primary.darker'sx={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)' }} >Content Library</Typography>
           </Stack>
           <Stack direction='row' spacing={2} mb={2}>
-          <Button 
-            size='small'
-            variant="contained"
-            color="error">
-              image
-              
-          </Button>
-          <Button
-            size='small'
-            variant="contained"
-            color="error">
+            <Button
+              onClick={() => handleButtonClick('image')}
+              size="small"
+              variant={activeButton === 'image' ? 'outlined' : 'contained'}
+              color={activeButton === 'image' ? 'primary' : 'primary'}
+              sx={{
+                color: activeButton === 'image' ? 'primary' : 'primary',
+              }}
+            >
+              Image
+            </Button>
+            <Button
+              onClick={() => handleButtonClick('video')}
+              size="small"
+              variant={activeButton === 'video' ? 'outlined' : 'contained'}
+              color={activeButton === 'video' ? 'primary' : 'primary'}
+              sx={{
+                color: activeButton === 'video' ? 'primary' : 'primary',
+              }}
+            >
               Video
-          </Button>
-          <Button
-          size='small'
-            variant="contained"
-            color="error">
+            </Button>
+            <Button
+              onClick={() => handleButtonClick('blog')}
+              size="small"
+              variant={activeButton === 'blog' ? 'outlined' : 'contained'}
+              color={activeButton === 'blog' ? 'primary' : 'primary'}
+              sx={{
+                color: activeButton === 'blog' ? 'primary' : 'primary',
+              }}
+            >
               Blog
-          </Button>
+            </Button>
           </Stack>
           <FormProvider methods={methods} onSubmit={onSubmit}>
             <Stack spacing={2.5} alignItems="flex-start">
-            <RHFUpload
-                name="image"
-                maxSize={1048576}
-                onDrop={handleDrop}
-                placeholder="Upload the image"
+              {activeButton === 'image' && (
+                <RHFUpload
+                  name="image"
+                  maxSize={52428800}
+                  onDrop={handleDrop}
+                  error={errors.image?.message}
+                // Additional props...
+                />
+              )}
+              {activeButton === 'video' && (
+                <RHFUpload
+                  name="video"
+                  maxSize={52428800}
+                  onDrop={handleDrop}
+                  error={errors.video?.message}
+                // Additional props...
+                />
+              )}
+              {activeButton === 'blog' && (
+                <RHFTextField
+                  name="blog"
+                  multiline
+                  rows={4}
+                  label="Write your blog"
+                  sx={{ pb: 2 }}
+                  error={errors.blog?.message}
+                />
+              )}
 
-                // onRemove={handleRemoveFile}
-                // onRemoveAll={handleRemoveAllFiles}
-                // onUpload={() => console.log('ON UPLOAD')}
-                helperText={
-                  <>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                     Upload image
-                    </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                    Allowed *.jpeg, *.jpg, *.png, *.gif
-                    <br /> max size of {fData(104857)}
-                  </Typography></>
-                }
-              />
-              <RHFTextField name="description" multiline rows={4} label="Enter the description" sx={{ pb: 2}} />
-
-              <LoadingButton
+              {/* Render other fields conditionally based on the activeButton */}
+              <RHFTextField name="description" multiline rows={4} label="Enter the description" sx={{ pb: 2 }} error={errors.description?.message} />
+              <Button
+                component={RouterLink}
+                href={paths.marketing.schedule}
                 size="large"
                 type="submit"
                 variant="contained"
-                color="error"
-                loading={isSubmitting}
+                color='primary'
+                loading={isSubmitting || selectedContent.length !== 1}
                 sx={{
                   alignSelf: { xs: 'center', md: 'unset' },
                 }}
               >
                 Schedule
-              </LoadingButton>
+              </Button>
             </Stack>
           </FormProvider>
         </Grid>
       </Grid>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={() => setSnackbarOpen(false)}
+        message={snackbarMessage}
+      />
     </Container>
   );
 }
