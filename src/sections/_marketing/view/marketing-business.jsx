@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 
-import { fData } from 'src/utils/format-number';
+// import { fData } from 'src/utils/format-number';
 
 
 
@@ -56,7 +56,7 @@ export default function MarketingBusinessForm() {
     message: Yup.string().required('Message is required'),
     phoneNumber: Yup.string().required('Phone Number is required'),
     address: Yup.string().required('Address is required'),
-    logo: Yup.string().required('Logo is required'),
+    logo: Yup.mixed().required('Logo is required'),
 
   });
 
@@ -82,7 +82,7 @@ export default function MarketingBusinessForm() {
     reset,
     handleSubmit,
     setValue,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = methods;
 
   const onSubmit = handleSubmit(async (data) => {
@@ -93,7 +93,7 @@ export default function MarketingBusinessForm() {
       console.error(error);
     }
   });
-  const handleDrop = useCallback(
+  const handleDropLogo = useCallback(
     (acceptedFiles) => {
       const file = acceptedFiles[0];
 
@@ -156,38 +156,26 @@ export default function MarketingBusinessForm() {
               {/* <RHFTextField name="logo" label="Logo" multiline rows={4}/> */}
               <RHFUpload
                 name="image"
-                maxSize={3145728}
-                onDrop={handleDrop}
-                // onRemove={handleRemoveFile}
-                // onRemoveAll={handleRemoveAllFiles}
-                // onUpload={() => console.log('ON UPLOAD')}
+                maxSize={52428800}
+                onDrop={handleDropLogo}
+                accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.gif'] }} // Only accept image files
+                error={errors.image?.message}
+                placeholder="Select an image"
                 helperText={
-                  <><Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-               Upload Logo 
-                  </Typography><Typography
-                    variant="caption"
-                    sx={{
-                      mt: 2,
-                      mx: 'auto',
-                      display: 'block',
-                      textAlign: 'center',
-                      color: 'text.secondary',
-                    }}
-                  >
-                   Allowed *.jpeg, *.jpg, *.png, *.gif
-                    <br /> max size of {fData(3145728)}
-                    </Typography></>
-}
-/>
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          mt: 2,
+                          mx: 'auto',
+                          display: 'block',
+                          textAlign: 'center',
+                          color: 'text.secondary',
+                        }}
+                      >
+                        upload logo
+                      </Typography>
+                  }
+              />
 
 
               <LoadingButton

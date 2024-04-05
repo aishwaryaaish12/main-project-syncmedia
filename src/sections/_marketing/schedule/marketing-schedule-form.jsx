@@ -13,7 +13,9 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 // import { fData } from 'src/utils/format-number';
 import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
+// import { RouterLink } from 'src/routes/components';
+
+
 
 // import { Card } from '@mui/material';
 
@@ -63,7 +65,7 @@ export default function MarketingScheduleForm() {
     try {
       reset();
       console.log('DATA', data)
-      navigate(paths.marketing.draft)
+      navigate(paths.marketing.draft.content)
     } catch (error) {
       console.error(error);
     }
@@ -81,7 +83,14 @@ export default function MarketingScheduleForm() {
         maxWidth: '100%',
         width: '550px',
         height:'500px',
+        mb:'5rem',
+        mt:'2rem',
         backgroundColor: 'rgba(186, 208, 228, 0.2)',
+        '@media (min-width:600px)': {
+          width: '550px',
+          // Set width to 550px on screens wider than 600px
+        },
+
       }}
     >
       <Grid container spacing={4} justifyContent="center">
@@ -114,8 +123,8 @@ export default function MarketingScheduleForm() {
                 Upload
               </Button>
               <Button
-                component={RouterLink}
-                href={paths.marketing.upload}
+                // component={RouterLink}
+                // href={paths.marketing.upload}
                 fullWidth
                 size="large"
                 variant="contained"

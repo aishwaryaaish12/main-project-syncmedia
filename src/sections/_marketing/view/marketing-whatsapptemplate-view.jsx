@@ -12,7 +12,7 @@ import { paths } from 'src/routes/paths';
 export default function MarketingWhatsapptemplateView() {
   const navigate= useNavigate();
   const navigateToAddToDraft = ()=>{
-    navigate(paths.marketing.draft)
+    navigate(paths.marketing.draft.whatsappcampaign)
     }
   const containerStyles = {
     maxWidth: 600,
@@ -77,10 +77,10 @@ export default function MarketingWhatsapptemplateView() {
 
     </Container>
     <Container sx={{ display: 'flex', justifyContent: 'space-around', width:'400px' }}>
-    <Button variant="contained" size='large' color="inherit" onClick={navigateToAddToDraft} style={{ margin: '20px auto', display: 'inline' }}>
+    <Button variant="contained" size='large' color="primary" onClick={navigateToAddToDraft} style={{ margin: '20px auto', display: 'inline' }}>
     Add to draft
   </Button>
-    <Button variant="contained" size='large' color="inherit" onClick={handleSendWhatsApp} style={{ margin: '20px auto', display: 'block' }}>
+    <Button variant="contained" size='large' color="primary" onClick={handleSendWhatsApp} style={{ margin: '20px auto', display: 'block' }}>
     Send meassage
   </Button>
   </Container>

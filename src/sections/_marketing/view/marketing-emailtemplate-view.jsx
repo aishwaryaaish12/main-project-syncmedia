@@ -11,7 +11,7 @@ import { paths } from 'src/routes/paths';
 export default function MarketingEmailtemplateView() {
   const navigate =useNavigate();
   const navigateToAddToDraft = ()=>{
-    navigate(paths.marketing.draft)
+    navigate(paths.marketing.draft.emailcampaign)
     }
     const navigateToClickhere = ()=>{
       navigate(paths.marketing.unsubscribe)

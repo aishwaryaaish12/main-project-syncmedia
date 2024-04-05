@@ -30,9 +30,23 @@ export const paths = {
     calendar: '/marketing/calendar',
     emailtemplate: '/marketing/emailtemplate',
     whatsapptemplate: '/marketing/whatsapptemplate',
-    draft: '/marketing/draft',
     unsubscribe: '/marketing/unsubscribe',
+    // emailcampaignlist: '/marketing/emailcamapignlist',
+    // contentlist: '/marketing/contentlist',
+    draft: {
+      root: '/marketing/draft',
+      // new: path(ROOTS_DASHBOARD, '/user/new'),
+      content:  '/marketing/draft/content',
+      emailcampaign: '/marketing/draft/emailcampaign',
+      whatsappcampaign: '/marketing/draft/whatsappcampaign',
+      // cards: path(ROOTS_DASHBOARD, '/user/cards'),
+      // profile: path(ROOTS_DASHBOARD, '/user/profile'),
+      // account: path(ROOTS_DASHBOARD, '/user/account'),
+      // edit: (name) => path(ROOTS_DASHBOARD,`/user/${name}/edit`),
+      // demoEdit: path(ROOTS_DASHBOARD, `/user/reece-chung/edit`),
+    },
   },
+  
   // Travel
   travel: {
     root: '/travel',

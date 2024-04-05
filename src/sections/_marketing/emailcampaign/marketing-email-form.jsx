@@ -118,6 +118,7 @@ export default function MarketingEmailForm() {
                 onDrop={handleDropImage}
                 accept={{ 'image/*': ['.jpg', '.jpeg', '.png', '.gif'] }} // Only accept image files
                 error={errors.image?.message}
+                placeholder="Select an image"
                 helperText={
                       <Typography
                         variant="caption"

@@ -43,7 +43,7 @@ export default function MarketingCalendarView() {
       // events={events}
       startAccessor="start"
       endAccessor="end"
-      style={{ height: 500 }}
+      style={{ height: 600 }}
     />
     </Container>
   );

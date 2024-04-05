@@ -112,7 +112,7 @@ export default function MarketingUploadForm() {
           size="large"
           variant="contained"
           color="primary"
-          sx={{ width: '120px' }}
+          sx={{ width: '120px', mb:'2rem' }}
           // onClick={onSubmit}
           // loading={isSubmitting}
           >
