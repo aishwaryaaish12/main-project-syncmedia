@@ -9,6 +9,36 @@ import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 
 export default function MarketingTrialEndedView() {
+  const amount = Math.round(8341.10 * 100); // Convert Rupees to paisa
+
+  const handleSubscribe = () => {
+    const options = {
+      key: "rzp_test_HrR1RlW6tTifWM",
+      key_secret: "oUTXJn8TIctgN48AKgX5Rcfw",
+      amount,
+      currency: "INR",
+      name: "SyncMedia Hub",
+      description: "For testing purpose",
+      handler(response) {
+        alert(response.razorpay_payment_id);
+      },
+          // prefill: {
+      //   name: " ",
+      //   email: " ",
+      //   contact: " "
+      // },
+      notes: {
+        address: "Razorpay Corporate office"
+      },
+      theme: {
+        color: "primary"
+      }
+    };
+
+    const pay = new window.Razorpay(options);
+    pay.open(); 
+  };
+
   return (
     <Container
       sx={{
@@ -25,7 +55,7 @@ export default function MarketingTrialEndedView() {
         alignItems={{ xs: 'center', md: 'flex-end' }}
         direction={{ xs: 'column', md: 'row' }}
         justifyContent={{ md: 'space-between' }}
-        sx={{ mb: { xs: 5, md: 10 } }}
+        sx={{ mb: { xs: 2, md: 10 } }} // Reduce the margin bottom here
       >
         <Stack
           spacing={3}
@@ -39,46 +69,45 @@ export default function MarketingTrialEndedView() {
             Pricing
           </Typography>
 
-          <Typography variant="h2">Check Our Pricing</Typography>
+          <Typography variant="h2" sx={{ color: 'primary.darker' }}>Unlock Our Plan</Typography>
         </Stack>
       </Stack>
 
-      <Card sx={{ width: '430px', height: '570px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.2)' }, }}>
+      <Card sx={{ width: '100%', maxWidth: 430, height: 'auto', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.2)' }}}>
         <Box p={3}>
-        <Image src='/assets/icons/ic_agreement.svg' sx={{ width: '50px', height: '50px',top: 30,color:'gray',mb:'8px' }} />
+          <Image src='/assets/icons/ic_agreement.svg' sx={{ width: '50px', height: '50px', top: '25px', mb: '8px', filter: 'grayscale(100%)' }} />
 
-          <Typography variant="h3" color='primary' sx={{mt:'35px'}}>
+          <Typography variant='h3' color='primary' sx={{ mt: '35px' }}>
             POPULAR
           </Typography>
           <Typography variant="body1" align="center" sx={{ mt: 4 }}>
-          Your 14-days free trial has expired. To continue access to SyncMedia Hub Please Subscribe now.
+            Your 14-days free trial has expired. To continue access to SyncMedia Hub Please Subscribe now.
           </Typography>
 
-          <Stack direction="row" alignItems="center" spacing={0.5}>
-            <Typography variant="h4" component="span" sx={{ mt: 3,alignItems:"center" }}>$100</Typography>
-            <Typography variant="h5" component="span" sx={{ color: 'text.disabled', mt: 3 }}>
+          <Stack direction="row" alignItems="center" spacing={0.5} sx={{ justifyContent: 'center', mt: 3,ml:'20px' }}>
+            <Typography variant='h2' component="span" sx={{ color: 'primary.main' }}>$100</Typography>
+            <Typography variant="h6" component="span" sx={{ color: 'text.disabled',mt:'15px' }}>
               /yearly
             </Typography>
           </Stack>
 
-          <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 5 }}>
-            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> Cross-Platform Posting
+          <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 3 }}>
+            <Iconify icon="carbon:checkmark" sx={{ mr: 1, color: 'primary.main' }} /> Cross-Platform Posting
           </Stack>
           <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 3 }}>
-            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> Manage Posts
+            <Iconify icon="carbon:checkmark" sx={{ mr: 1, color: 'primary.main' }} /> Manage Posts
           </Stack>
           <Stack direction="row" alignItems="center" sx={{ typography: 'body2', mt: 3 }}>
-            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> Campaign
+            <Iconify icon="carbon:checkmark" sx={{ mr: 1, color: 'primary.main' }} /> Campaign
           </Stack>
 
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 9 }}>
-            <Button variant="contained" color="primary" sx={{ height: '43px',fontSize:'20px' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+            <Button variant="contained" color="primary" onClick={handleSubscribe} sx={{ height: '48px', fontSize: '20px' }}>
               Subscribe Now
             </Button>
           </Box>
         </Box>
       </Card>
-
     </Container>
   );
 }

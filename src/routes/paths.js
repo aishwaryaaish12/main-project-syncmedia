@@ -19,6 +19,9 @@ export const paths = {
     socialconnect:'/marketing/socialconnect',
     subscription:'/marketing/subscription',
     trialended:'/marketing/trialended',
+    marketingtraveltour: '/marketing/mtraveltouritem',
+    marketingtraveltournew: '/marketing/mtraveltouritemnew',
+
     
 
     emailcampaign:'/marketing/emailcampaign',

@@ -18,6 +18,8 @@ const UpdatePage = lazy(() => import('src/pages/marketing/update'));
 const SocialConnectPage = lazy(() => import('src/pages/marketing/socialconnect'));
 const SubscriptionView = lazy(() => import('src/pages/marketing/subscription'));
 const TrialEndedView = lazy(() => import('src/pages/marketing/trialended'));
+const MarketingTravelTourPage = lazy(() => import('src/pages/marketing/mtraveltouritem'));
+const MarketingTravelItemNewPage = lazy(() => import('src/pages/marketing/mtraveltouritemnew'));
 
 
 const EmailPage = lazy(() => import('src/pages/marketing/emailcampaign'));
@@ -54,6 +56,8 @@ export const marketingRoutes = [
       { path: 'socialconnect', element: <SocialConnectPage /> },
       { path: 'subscription', element: <SubscriptionView /> },
       { path: 'trialended', element: <TrialEndedView /> },
+      { path: 'marketingtraveltour', element: <MarketingTravelTourPage /> },
+      { path: 'marketingtraveltouritemnew', element: <MarketingTravelItemNewPage /> },
 
       
 

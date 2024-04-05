@@ -43,7 +43,7 @@ export default function GeneralAnalyticsPage() {
           <Grid item xs={12} sm={6} md={3}>
             <AnalyticsWidgetSummary
               title="All Users"
-              total={714000}
+              total={0}
               icon="mdi:users"
             />
           </Grid>
@@ -51,7 +51,7 @@ export default function GeneralAnalyticsPage() {
           <Grid item xs={12} sm={6} md={3}>
             <AnalyticsWidgetSummary
               title="Active Users"
-              total={1352831}
+              total={0}
               color="info"
               icon="ooui:user-active"
             />
@@ -60,7 +60,7 @@ export default function GeneralAnalyticsPage() {
           <Grid item xs={12} sm={6} md={3}>
             <AnalyticsWidgetSummary
               title="Inactive Users"
-              total={1723315}
+              total={0}
               color="warning"
               icon="material-symbols:inactive-order-outline"
             />
@@ -69,7 +69,7 @@ export default function GeneralAnalyticsPage() {
           <Grid item xs={12} sm={6} md={3}>
             <AnalyticsWidgetSummary
               title="Subscribed Users"
-              total={234}
+              total={0}
               color="error"
               icon="material-symbols:unsubscribe-outline"
             />
@@ -77,7 +77,7 @@ export default function GeneralAnalyticsPage() {
           <Grid item xs={12} sm={6} md={3}>
             <AnalyticsWidgetSummary
               title="Blocked Users"
-              total={234}
+              total={0}
               color="success"
               icon="icomoon-free:blocked"
             />
@@ -85,10 +85,10 @@ export default function GeneralAnalyticsPage() {
           <Grid item xs={12} sm={6} md={3}>
             <AnalyticsWidgetSummary
               title="Feedback"
-              total={234}
+              total={0}
               color="secondary"
               icon="mdi:feedback-outline"
-              sx={{cursor:'pointer'}}
+              
             />
           </Grid>
           {/* <Grid item xs={12} sm={6} md={3}>

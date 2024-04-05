@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 //  import { _tours} from 'src/_mock';
 
-import TravelTourItemNew from 'src/sections/_travel/list/travel-tour-item-new';
+import MarketingTravelTourItemNew from 'src/sections/_marketing/view/marketing-travel-tour-item-new';
 
 export default function MarketingSocialConnectPage() {
 
@@ -45,7 +45,7 @@ export default function MarketingSocialConnectPage() {
           },
         }}>
                   {imagesAndsocialLinks.map((item, index) => (
-          <TravelTourItemNew key={item.id} imagesAndsocialLinks={item} />
+          <MarketingTravelTourItemNew key={item.id} imagesAndsocialLinks={item} />
 ))}
          {/* {_tours?.map((tour) => (
           <TravelTourItem key={tour.id} tour={tour} />

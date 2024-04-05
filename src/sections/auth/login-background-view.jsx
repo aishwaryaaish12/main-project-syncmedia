@@ -130,7 +130,7 @@ export default function LoginBackgroundView() {
           type="submit"
           variant="contained"
           loading={isSubmitting}
-        >
+          component={RouterLink } to={paths.marketing.loghome}>
           Login
         </LoadingButton>
       </Stack>

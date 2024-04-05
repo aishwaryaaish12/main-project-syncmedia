@@ -61,7 +61,7 @@ export default function ResetPasswordForm() {
 
   const renderHead = (
     <div>
-      <Typography variant="h3" paragraph>
+      <Typography variant="h3" paragraph sx={{color:'primary.darker'}}>
         Reset Password
       </Typography>
 
@@ -144,12 +144,11 @@ export default function ResetPasswordForm() {
           color="text.secondary">
         <LoadingButton
           fullWidth
-          color="inherit"
           size="large"
           type="submit"
           variant="contained"
           loading={isSubmitting}
-        >
+         sx={{backgroundColor:'primary.main'}}>
           Submit
         </LoadingButton>
         </Link>

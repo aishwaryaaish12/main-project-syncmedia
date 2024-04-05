@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import Box from '@mui/material/Box';
 // import Fab from '@mui/material/Fab';
 import Stack from '@mui/material/Stack';
@@ -12,15 +14,26 @@ import { useResponsive } from 'src/hooks/use-responsive';
 import { bgGradient } from 'src/theme/css';
 
 import Image from 'src/components/image';
-// import Iconify from 'src/components/iconify';
 
+// import Iconify from 'src/components/iconify';
+import MarketingSubscriptionView from '../view/marketing-subscription';
 // ----------------------------------------------------------------------
 
 export default function MarketingLandingHero() {
   const theme = useTheme();
 
   const mdUp = useResponsive('up', 'md');
+  const [showSubscription, setShowSubscription] = useState(false);
 
+  // Function to toggle showing subscription view
+  const handleGetStarted = () => {
+    setShowSubscription(true);
+  };
+
+  // Render subscription view if showSubscription is true
+  if (showSubscription) {
+    return <MarketingSubscriptionView />;
+  }
   return (
     <Box
       sx={{
@@ -56,7 +69,7 @@ export default function MarketingLandingHero() {
               Dive into the world of influence
             </Typography>
 
-            <Typography sx={{ color: 'primary.dark' }}>
+            <Typography sx={{ color: 'black' }}>
              our social media mastery ensures your brand not only stands out but stays ahead
             </Typography>
 
@@ -67,7 +80,7 @@ export default function MarketingLandingHero() {
               justifyContent={{ xs: 'center', md: 'unset' }}
               sx={{ mt: 5 }}
             >
-              <Button variant="contained" color="primary" size="large">
+              <Button variant="contained" color="primary" size="large" onClick={handleGetStarted}>
                 Get Started
               </Button>
 
