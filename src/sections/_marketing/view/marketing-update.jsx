@@ -133,7 +133,7 @@ export default function MarketingUpdatePage() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            <Typography variant="h3">Business Profile</Typography>
+            <Typography variant="h3" sx={{color:'primary.darker'}}>Business Profile</Typography>
 
             {/* <Typography sx={{ color: 'text.secondary' }}>
               We normally respond within 2 business days
@@ -194,7 +194,7 @@ export default function MarketingUpdatePage() {
                 size="large"
                 type="submit"
                 variant="contained"
-                color="inherit"
+                color="primary"
                 loading={isSubmitting}
                 sx={{
                   alignSelf: { xs: 'center', md: 'unset' },

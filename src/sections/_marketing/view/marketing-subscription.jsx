@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
@@ -5,8 +7,12 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
+
 import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
+
 
 export default function MarketingSubscriptionView() {
   return (
@@ -70,7 +76,8 @@ export default function MarketingSubscriptionView() {
           </Stack>
 
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 9 }}>
-            <Button variant="contained" color="primary" sx={{ height: '43px' }}>
+
+            <Button variant="contained" color="primary" sx={{ height: '43px' }} component={RouterLink } to={paths.loginBackground} >
               Start your Free Trial
             </Button>
           </Box>

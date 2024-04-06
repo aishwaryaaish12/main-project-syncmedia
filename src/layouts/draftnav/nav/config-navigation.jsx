@@ -2,16 +2,19 @@
 // components
 // import Label from '../../../components/label';
 import {paths} from '../../../routes/paths';
-// import Iconify from '../../../components/iconify';
-import SvgColor from '../../../components/svg-color';
+import Iconify from '../../../components/iconify';
+// import SvgColor from '../../../components/svg-color';
 
 // ----------------------------------------------------------------------
 
 const icon = (name) => (
-  <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
+  <Iconify icon={`${name}`} />
 );
 
 const ICONS = {
+  content: icon('bi:file-text-fill'),
+  emailcampaign: icon('icon-park-solid:mail-review'),
+  whatsappcampaign: icon('ic:outline-chat'),
   blog: icon('ic_blog'),
   cart: icon('ic_cart'),
   chat: icon('ic_chat'),
@@ -58,20 +61,20 @@ const navConfig = [
     items: [
       {
         title: 'Content',
-        path: paths.marketing.draft.content,
-        icon: ICONS.user,
+        path: paths.draft.content,
+        icon: ICONS.content,
       },
 
       {
         title: 'Email Campaign',
-        path: paths.marketing.draft.emailcampaign,
-        icon: ICONS.user,
+        path: paths.draft.emailcampaign,
+        icon: ICONS.emailcampaign,
         
       },
       {
         title: 'WhatsApp Campaign',
-        path: paths.marketing.draft.whatsappcampaign,
-        icon: ICONS.user,
+        path: paths.draft.whatsappcampaign,
+        icon: ICONS.whatsappcampaign,
        
       },
 

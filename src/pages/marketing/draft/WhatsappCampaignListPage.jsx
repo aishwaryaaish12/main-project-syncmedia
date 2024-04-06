@@ -205,8 +205,8 @@ export default function WhatsappCampaignListPage() {
         <CustomBreadcrumbs
           heading="WhatsApp Campaigns"
           links={[
-            { name: 'Draft', href:paths.marketing.draft },
-            { name: 'WhatsApp Campaign', href: paths.marketing.draft.whatsappcampaign },
+            { name: 'Draft', href:paths.draft },
+            { name: 'WhatsApp Campaign', href: paths.draft.whatsappcampaign },
             { name: 'List' },
           ]}
           // action={

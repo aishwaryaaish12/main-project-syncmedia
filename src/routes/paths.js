@@ -19,6 +19,9 @@ export const paths = {
     socialconnect:'/marketing/socialconnect',
     subscription:'/marketing/subscription',
     trialended:'/marketing/trialended',
+    marketingtraveltour: '/marketing/mtraveltouritem',
+    marketingtraveltournew: '/marketing/mtraveltouritemnew',
+
     
 
     emailcampaign:'/marketing/emailcampaign',
@@ -33,20 +36,14 @@ export const paths = {
     unsubscribe: '/marketing/unsubscribe',
     // emailcampaignlist: '/marketing/emailcamapignlist',
     // contentlist: '/marketing/contentlist',
-    draft: {
-      root: '/marketing/draft',
-      // new: path(ROOTS_DASHBOARD, '/user/new'),
-      content:  '/marketing/draft/content',
-      emailcampaign: '/marketing/draft/emailcampaign',
-      whatsappcampaign: '/marketing/draft/whatsappcampaign',
-      // cards: path(ROOTS_DASHBOARD, '/user/cards'),
-      // profile: path(ROOTS_DASHBOARD, '/user/profile'),
-      // account: path(ROOTS_DASHBOARD, '/user/account'),
-      // edit: (name) => path(ROOTS_DASHBOARD,`/user/${name}/edit`),
-      // demoEdit: path(ROOTS_DASHBOARD, `/user/reece-chung/edit`),
-    },
+   
   },
-  
+  draft: {
+    root: '/draft',
+    content:  '/draft/content',
+    emailcampaign: '/draft/emailcampaign',
+    whatsappcampaign: '/draft/whatsappcampaign',
+  },
   // Travel
   travel: {
     root: '/travel',

@@ -206,8 +206,8 @@ export default function EmailCampaignListPage() {
         <CustomBreadcrumbs
           heading="Email Campaigns"
           links={[
-            { name: 'Draft', href: paths.marketing.draft },
-            { name: 'Email Campaigns', href: paths.marketing.draft.emailcampaign },
+            { name: 'Draft', href: paths.draft },
+            { name: 'Email Campaigns', href: paths.draft.emailcampaign },
             { name: 'List' },
           ]}
           // action={

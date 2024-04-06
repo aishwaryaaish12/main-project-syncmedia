@@ -3,6 +3,7 @@ import { Outlet, Navigate, useRoutes } from 'react-router-dom';
 
 import MainLayout from 'src/layouts/main';
 import AuthGuard from 'src/auth/AuthGuard';
+import DraftLayout from 'src/layouts/draftnav/DraftLayout';
 import DashboardLayout from 'src/layouts/dashboard/DashboardLayout';
 
 import { SplashScreen } from 'src/components/loading-screen';
@@ -22,10 +23,13 @@ import { componentsRoutes } from './components';
 const IndexPage = lazy(() => import('src/pages/home'));
 const SupportPage = lazy(() => import('src/pages/support'));
 
-export const UserListPage=lazy(() => import('../../pages/dashboard/UserListPage'));
-export const GeneralAnalyticsPage=lazy(() => import('../../pages/dashboard/GeneralAnalyticsPage'));
-export const SocialMediaListPage=lazy(() => import('../../pages/dashboard/SocialMediaListPage'));
-export const NewSocialMediaPage=lazy(() => import('../../pages/dashboard/NewSocialMediaPage'));
+export const UserListPage = lazy(() => import('../../pages/dashboard/UserListPage'));
+export const GeneralAnalyticsPage = lazy(() => import('../../pages/dashboard/GeneralAnalyticsPage'));
+export const SocialMediaListPage = lazy(() => import('../../pages/dashboard/SocialMediaListPage'));
+export const NewSocialMediaPage = lazy(() => import('../../pages/dashboard/NewSocialMediaPage'));
+export const ContentListPage = lazy(() => import('src/pages/marketing/draft/ContentListPage'));
+export const EmailCampaignListPage = lazy(() => import('src/pages/marketing/draft/EmailCampaignListPage'));
+export const WhatsappCampaignListPage = lazy(() => import('src/pages/marketing/draft/WhatsappCampaignListPage'));
 
 export default function Router() {
   return useRoutes([
@@ -59,14 +63,14 @@ export default function Router() {
       element: (
         <AuthGuard>
           {/* <RoleBasedGuard roles={['admin']} hasContent> */}
-            <DashboardLayout />
+          <DashboardLayout />
           {/* </RoleBasedGuard> */}
         </AuthGuard>
       ),
       children: [
         // { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
         // { path: 'app', element: <GeneralAppPage /> },
-
+        
         { path: 'analytics', element: <GeneralAnalyticsPage /> },
 
         // { path: 'booking', element: <GeneralBookingPage /> },
@@ -89,15 +93,27 @@ export default function Router() {
 
           ],
         },
+      ],
+    },
+    {
+      path: 'draft',
+      element: (
 
- 
-       
+        <DraftLayout />
 
-        // { path: 'calendar', element: <CalendarPage /> },
+      ),
+      children: [
+        { path: 'analytics', element: <GeneralAnalyticsPage /> },
+        { path: 'support', element: <SupportPage /> },
+        { path: 'content', element: <ContentListPage /> },
+        { path: 'emailcampaign', element: <EmailCampaignListPage /> },
+        { path: 'whatsappcampaign', element: <WhatsappCampaignListPage /> },
 
-        // { path: 'permission-denied', element: <PermissionDeniedPage /> },
-],
-},
+      ],
+    },
+
+
+
 
 
     ...authRoutes,

@@ -53,7 +53,7 @@ export default function ResetPassword() {
         sx={{ mb: 5, width: 96, height: 96, mx: 'auto' }}
       />
 
-      <Typography variant="h3">Check Your Email</Typography>
+      <Typography variant="h3" color='primary.darker'>Check Your Email</Typography>
 
       <Typography variant="body2" sx={{ mt: 2, mb: 5, color: 'text.secondary' }}>
         We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
@@ -73,11 +73,11 @@ export default function ResetPassword() {
         <LoadingButton
           fullWidth
           size="large"
-          color="inherit"
+          
           type="submit"
           variant="contained"
           loading={isSubmitting}
-          sx={{ mt: 3 }}
+          sx={{ mt: 3,backgroundColor:'primary.main' }}
         >
           Confirm the code
         </LoadingButton>
@@ -103,8 +103,17 @@ export default function ResetPassword() {
           display: 'inline-flex',
         }}
       >
-        <Iconify icon="carbon:chevron-left" width={16} sx={{ mr: 1 }} />
-        Return to sign in
+         <Stack direction="row" alignItems="center">
+          {/* Typography component for "Return to" */}
+          <Typography variant="subtitle2">
+            Return to
+          </Typography>
+          <Iconify icon="carbon:chevron-left" width={16} sx={{ mr: 1 }} />
+          {/* Typography component for "Sign in" with custom color */}
+          <Typography variant="subtitle2" sx={{ color: 'primary.main' }}>
+            Sign in
+          </Typography>
+        </Stack>
       </Link>
     </Stack>
   );

@@ -18,7 +18,7 @@ import { useSettingsContext } from '../../components/settings';
 
 // ----------------------------------------------------------------------
 
-export default function DashboardLayout() {
+export default function DraftLayout() {
   const { themeLayout } = useSettingsContext();
 
   const isDesktop = useResponsive('up', 'lg');

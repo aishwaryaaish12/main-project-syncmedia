@@ -202,8 +202,8 @@ export default function ContentListPage() {
         <CustomBreadcrumbs
           heading="Contents"
           links={[
-            { name: 'Draft', href: paths.marketing.draft },
-            { name: 'Content', href: paths.marketing.draft.content },
+            { name: 'Draft', href: paths.draft },
+            { name: 'Content', href: paths.draft.content },
             { name: 'List' },
           ]}
           // action={

@@ -103,8 +103,17 @@ export default function VerifyView() {
           display: 'inline-flex',
         }}
       >
-        <Iconify icon="carbon:chevron-left" width={16} sx={{ mr: 1 }} />
-        Return to sign in
+       <Stack direction="row" alignItems="center">
+          {/* Typography component for "Return to" */}
+          <Typography variant="subtitle2">
+            Return to
+          </Typography>
+          <Iconify icon="carbon:chevron-left" width={16} sx={{ mr: 1 }} />
+          {/* Typography component for "Sign in" with custom color */}
+          <Typography variant="subtitle2" sx={{ color: 'primary.main' }}>
+            Sign in
+          </Typography>
+        </Stack>
       </Link>
     </Stack>
   );

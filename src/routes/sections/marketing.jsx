@@ -1,6 +1,5 @@
 import { lazy } from 'react';
 
-import DashboardLayout from 'src/layouts/draftnav/DashboardLayout';
 
 
 
@@ -22,6 +21,8 @@ const UpdatePage = lazy(() => import('src/pages/marketing/update'));
 const SocialConnectPage = lazy(() => import('src/pages/marketing/socialconnect'));
 const SubscriptionView = lazy(() => import('src/pages/marketing/subscription'));
 const TrialEndedView = lazy(() => import('src/pages/marketing/trialended'));
+const MarketingTravelTourPage = lazy(() => import('src/pages/marketing/mtraveltouritem'));
+const MarketingTravelItemNewPage = lazy(() => import('src/pages/marketing/mtraveltouritemnew'));
 
 
 const EmailPage = lazy(() => import('src/pages/marketing/emailcampaign'));
@@ -34,9 +35,7 @@ const CalendarPage = lazy(() => import('src/pages/marketing/calendar'));
 const EmailtemplatePage = lazy(() => import('src/pages/marketing/emailtemplate'));
 const WhatsapptemplatePage = lazy(() => import('src/pages/marketing/whatsapptemplate'));
 const UnsubscribePage = lazy(() => import('src/pages/marketing/unsubscribe'));
-export const ContentListPage = lazy(() => import('src/pages/marketing/draft/ContentListPage'));
-export const EmailCampaignListPage = lazy(() => import('src/pages/marketing/draft/EmailCampaignListPage'));
-export const WhatsappCampaignListPage = lazy(() => import('src/pages/marketing/draft/WhatsappCampaignListPage'));
+
 // ----------------------------------------------------------------------
 
 export const marketingRoutes = [
@@ -59,6 +58,13 @@ export const marketingRoutes = [
       { path: 'socialconnect', element: <SocialConnectPage /> },
       { path: 'subscription', element: <SubscriptionView /> },
       { path: 'trialended', element: <TrialEndedView /> },
+      { path: 'marketingtraveltour', element: <MarketingTravelTourPage /> },
+      { path: 'marketingtraveltouritemnew', element: <MarketingTravelItemNewPage /> },
+
+      
+
+
+
       { path: 'emailcampaign', element: <EmailPage /> },
       { path: 'schedule', element: <SchedulePage /> },
       { path: 'whatsappcampaign', element: <WhatsappPage /> },
@@ -72,31 +78,7 @@ export const marketingRoutes = [
      
 
      
-      {
-        path: 'draft',
-        element: (
-
-          <DashboardLayout />
-
-        ),
-        children: [
-         
-
-          { path: 'content', element: <ContentListPage /> },
-          { path: 'emailcampaign', element: <EmailCampaignListPage /> },
-          { path: 'whatsappcampaign', element: <WhatsappCampaignListPage /> },
-
-          // { path: 'booking', element: <GeneralBookingPage /> },
-
-
-
-
-
-          // { path: 'calendar', element: <CalendarPage /> },
-
-          // { path: 'permission-denied', element: <PermissionDeniedPage /> },
-        ],
-      },
+     
     ],
   },
 ];
