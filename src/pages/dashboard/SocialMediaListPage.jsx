@@ -198,7 +198,7 @@ export default function SocialMediaListPage() {
   return (
     <>
       <Helmet>
-        <title> User: List | Minimal UI</title>
+        {/* <title> User: List | Minimal UI</title> */}
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

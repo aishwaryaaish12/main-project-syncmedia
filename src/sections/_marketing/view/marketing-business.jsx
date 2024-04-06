@@ -7,6 +7,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
+
+
 // import { fData } from 'src/utils/format-number';
 
 
@@ -133,7 +137,7 @@ export default function MarketingBusinessForm() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            <Typography variant="h3">Business Profile</Typography>
+            <Typography variant="h3" sx={{color:'primary.darker'}}>Business Profile</Typography>
 
             {/* <Typography sx={{ color: 'text.secondary' }}>
               We normally respond within 2 business days
@@ -185,9 +189,9 @@ export default function MarketingBusinessForm() {
                 color="primary"
                 loading={isSubmitting}
                 sx={{
-                  alignSelf: { xs: 'center', md: 'unset' },
+                  alignSelf: { xs: 'center', md: 'unset' }
                 }}
-              >
+                component={RouterLink } to={paths.marketing.socialconnect}>
                 Submit
               </LoadingButton>
             </Stack>
