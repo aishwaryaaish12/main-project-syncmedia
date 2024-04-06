@@ -88,7 +88,7 @@ export default function MarketingLandingServices() {
         }}
       >
         {SERVICES.map((service, index) => (
-          <ServiceItem key={service.name} service={service} index={index} />
+          <ServiceItem key={service.name} service={service} index={index}  />
         ))}
       </Box>
     </Container>

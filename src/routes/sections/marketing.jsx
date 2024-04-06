@@ -1,5 +1,9 @@
 import { lazy } from 'react';
 
+import DashboardLayout from 'src/layouts/draftnav/DashboardLayout';
+
+
+
 // ----------------------------------------------------------------------
 
 const BlogPage = lazy(() => import('src/pages/marketing/posts'));
@@ -31,9 +35,10 @@ const UploadPage = lazy(() => import('src/pages/marketing/upload'));
 const CalendarPage = lazy(() => import('src/pages/marketing/calendar'));
 const EmailtemplatePage = lazy(() => import('src/pages/marketing/emailtemplate'));
 const WhatsapptemplatePage = lazy(() => import('src/pages/marketing/whatsapptemplate'));
-const DraftPage = lazy(() => import('src/pages/marketing/draft'));
 const UnsubscribePage = lazy(() => import('src/pages/marketing/unsubscribe'));
-
+export const ContentListPage = lazy(() => import('src/pages/marketing/draft/ContentListPage'));
+export const EmailCampaignListPage = lazy(() => import('src/pages/marketing/draft/EmailCampaignListPage'));
+export const WhatsappCampaignListPage = lazy(() => import('src/pages/marketing/draft/WhatsappCampaignListPage'));
 // ----------------------------------------------------------------------
 
 export const marketingRoutes = [
@@ -72,8 +77,35 @@ export const marketingRoutes = [
       { path: 'calendar', element: <CalendarPage /> },
       { path: 'emailtemplate', element: <EmailtemplatePage /> },
       { path: 'whatsapptemplate', element: <WhatsapptemplatePage /> },
-      { path: 'draft', element: <DraftPage /> },
       { path: 'unsubscribe', element: <UnsubscribePage /> },
+     
+
+     
+      {
+        path: 'draft',
+        element: (
+
+          <DashboardLayout />
+
+        ),
+        children: [
+         
+
+          { path: 'content', element: <ContentListPage /> },
+          { path: 'emailcampaign', element: <EmailCampaignListPage /> },
+          { path: 'whatsappcampaign', element: <WhatsappCampaignListPage /> },
+
+          // { path: 'booking', element: <GeneralBookingPage /> },
+
+
+
+
+
+          // { path: 'calendar', element: <CalendarPage /> },
+
+          // { path: 'permission-denied', element: <PermissionDeniedPage /> },
+        ],
+      },
     ],
   },
 ];

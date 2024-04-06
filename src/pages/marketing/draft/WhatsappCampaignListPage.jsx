@@ -23,17 +23,17 @@ import {
 
 import { _userList } from 'src/_mock/arrays';
 
-import Iconify from '../../components/iconify';
-import { PATH_DASHBOARD } from '../../routes/paths';
+import { paths} from '../../../routes/paths';
+import Iconify from '../../../components/iconify';
 // mock
 // layouts
-import Scrollbar from '../../components/scrollbar';
-import DashboardLayout from '../../layouts/dashboard';
+import Scrollbar from '../../../components/scrollbar';
+import DashboardLayout from '../../../layouts/dashboard';
 // components
-import ConfirmDialog from '../../components/confirm-dialog';
-import { useSettingsContext } from '../../components/settings';
-import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
-import {SocialMediaTableRow,SocialMediaTableToolbar } from '../../sections/dashboard/socialmedia/list';
+import ConfirmDialog from '../../../components/confirm-dialog';
+import { useSettingsContext } from '../../../components/settings';
+import CustomBreadcrumbs from '../../../components/custom-breadcrumbs';
+import {WhatsappTableRow,WhatsappTableToolbar,  } from '../../../sections/_marketing/draft/whatsappcampaign/list';
 import {
   useTable,
   emptyRows,
@@ -43,12 +43,12 @@ import {
   TableHeadCustom,
   TableSelectedAction,
   TablePaginationCustom,
-} from '../../components/table';
+} from '../../../components/table';
 // sections
 
 // ----------------------------------------------------------------------
 
-const STATUS_OPTIONS = ['all'];
+const STATUS_OPTIONS = ['all campaign', 'scheduled campaign'];
 
 const ROLE_OPTIONS = [
   'all',
@@ -64,23 +64,23 @@ const ROLE_OPTIONS = [
 ];
 
 const TABLE_HEAD = [
-  // { id: 'image', label: 'Image', align: 'left' },
-
-  { id: 'name', label: 'Name', align: 'left' },
-  // { id: 'company', label: 'Company', align: 'left' },
-  // { id: 'role', label: 'Role', align: 'left' },
-  // { id: 'isVerified', label: 'Verified', align: 'center' },
-  // { id: 'status', label: 'Status', align: 'left' },
-  // { id: '' },
+  { id: 'campaignname', label: 'Campaign Name', align: 'left' },
+  { id: 'subject', label: 'Subject', align: 'left' },
+  { id: 'description', label: 'Description', align: 'left' },
+  { id: 'link', label: 'Link', align: 'left' },
+  {id: 'image', label: 'Image', align: 'left' },
+  {id: 'sender', label: 'Sender', align: 'left' },
+  {id: 'receiver', label: 'Receiver', align: 'left' },
+  {id: 'schedule', label: 'Schedule', align: 'left' },
 ];
 
 // ----------------------------------------------------------------------
 
-SocialMediaListPage.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
+WhatsappCampaignListPage.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 
 // ----------------------------------------------------------------------
 
-export default function SocialMediaListPage() {
+export default function WhatsappCampaignListPage() {
   const {
     dense,
     page,
@@ -198,15 +198,15 @@ export default function SocialMediaListPage() {
   return (
     <>
       <Helmet>
-        {/* <title> User: List | Minimal UI</title> */}
+        <title> WhatsApp Campaign List</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Social Media List"
+          heading="WhatsApp Campaigns"
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'Social Media', href: PATH_DASHBOARD.socialmedia.root },
+            { name: 'Draft', href:paths.marketing.draft },
+            { name: 'WhatsApp Campaign', href: paths.marketing.draft.whatsappcampaign },
             { name: 'List' },
           ]}
           // action={
@@ -237,7 +237,7 @@ export default function SocialMediaListPage() {
 
           <Divider />
 
-          <SocialMediaTableToolbar
+          <WhatsappTableToolbar
             isFiltered={isFiltered}
             filterName={filterName}
             filterRole={filterRole}
@@ -288,7 +288,7 @@ export default function SocialMediaListPage() {
                   {dataFiltered
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                     .map((row) => (
-                      <SocialMediaTableRow
+                      <WhatsappTableRow
                         key={row.id}
                         row={row}
                         selected={selected.includes(row.id)}

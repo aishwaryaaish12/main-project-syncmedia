@@ -73,7 +73,7 @@ RHFUpload.propTypes = {
   helperText: PropTypes.node,
 };
 
-export function RHFUpload({ name, multiple, helperText, ...other }) {
+export function RHFUpload({ name, multiple, helperText,...other }) {
   const { control } = useFormContext();
 
   return (
