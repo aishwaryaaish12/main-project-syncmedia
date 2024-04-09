@@ -65,7 +65,7 @@ export default function MarketingScheduleForm() {
     try {
       reset();
       console.log('DATA', data)
-      navigate(paths.marketing.draft.content)
+      navigate(paths.draft.content)
     } catch (error) {
       console.error(error);
     }

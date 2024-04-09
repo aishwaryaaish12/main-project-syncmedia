@@ -33,7 +33,7 @@ export default function MarketingEcamForm() {
   }
 
   const navigateToAllCampaign = ()=>{
-  navigate(paths.marketing.draft)
+  navigate(paths.draft.whatsappcampaign)
   }
   
   const mdUp = useResponsive('up', 'md');
