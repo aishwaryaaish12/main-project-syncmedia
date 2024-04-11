@@ -19,7 +19,6 @@ import { useBoolean } from 'src/hooks/use-boolean';
 
 import Iconify from 'src/components/iconify';
 import FormProvider, { RHFTextField } from 'src/components/hook-form';
-
 // ----------------------------------------------------------------------
 
 export default function LoginBackgroundView() {
@@ -72,7 +71,7 @@ export default function LoginBackgroundView() {
 
 
   
-
+    
   const renderHead = (
     <div>
       <Typography variant="h3" paragraph sx={{color:'primary.darker'}}>
@@ -138,7 +137,6 @@ export default function LoginBackgroundView() {
         >
           Forgot password?
         </Link>
-
         <LoadingButton
           fullWidth
           color="primary"
@@ -146,7 +144,7 @@ export default function LoginBackgroundView() {
           type="submit"
           variant="contained"
           loading={isSubmitting}
-          component={RouterLink } to={paths.marketing.loghome}>
+         >
           Login
         </LoadingButton>
       </Stack>
