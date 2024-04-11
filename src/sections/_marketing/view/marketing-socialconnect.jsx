@@ -31,7 +31,7 @@ export default function MarketingSocialConnectPage() {
       <Stack spacing={3} sx={{ textAlign: 'center' }}>
         <Typography variant="h3">Social Connect</Typography>
         <Typography sx={{ color: 'text.secondary' }}>
-          Let connect with your social media channels
+          Lets connect with your social media channels
         </Typography>
       </Stack>
       <Box sx={{

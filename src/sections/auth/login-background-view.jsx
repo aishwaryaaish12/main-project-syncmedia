@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Link from '@mui/material/Link';
@@ -23,6 +24,7 @@ import FormProvider, { RHFTextField } from 'src/components/hook-form';
 
 export default function LoginBackgroundView() {
   const passwordShow = useBoolean();
+  const navigate = useNavigate()
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string().required('Email is required').email('That is not an email'),
@@ -49,14 +51,27 @@ export default function LoginBackgroundView() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await LoginSchema.validate(data, { abortEarly: false });
+      // Simulate an asynchronous operation with a delay
       await new Promise((resolve) => setTimeout(resolve, 500));
+      
+      // Set the token in the localStorage
+      localStorage.setItem('token', 'frfrfthh44445grvgr');
+      
+      // Reset the form
       reset();
+      
+      // Log the form data
       console.log('DATA', data);
+      
+      // Navigate to the specified path
+      navigate(paths.marketing.loghome);
     } catch (error) {
       console.error(error);
     }
   });
+
+
+  
 
   const renderHead = (
     <div>
@@ -65,7 +80,7 @@ export default function LoginBackgroundView() {
       </Typography>
 
       <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        {`Don’t have an account? `}
+        {`Dont have an account? `}
         <Link
           component={RouterLink}
           href={paths.registerBackground}
