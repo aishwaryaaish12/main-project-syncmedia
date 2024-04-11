@@ -123,21 +123,21 @@ export default function MarketingContentForm() {
         <Grid xs={12} md={6} lg={5}>
           {activeButton === 'image' && (
             <Image
-              sx={{ width: '100%', mt: 10 }}
+              sx={{ width: '100%', mt: 5 }}
               alt=""
               src="/assets/illustrations/contentlibrary_image.svg"
             />
           )}
           {activeButton === 'video' && (
             <Image
-              sx={{ width: '100%', mt: 10 }}
+              sx={{ width: '100%', mt: 5 }}
               alt=""
               src="/assets/illustrations/contentlibrary_video.svg"
             />
           )}
           {activeButton === 'blog' && (
             <Image
-              sx={{ width: '100%', mt: 10 }}
+              sx={{ width: '100%', mt: 5 }}
               alt=""
               src="/assets/illustrations/contentlibrary_blog.svg"
             />

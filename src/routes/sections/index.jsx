@@ -20,7 +20,7 @@ import { componentsRoutes } from './components';
 
 // ----------------------------------------------------------------------
 
-const IndexPage = lazy(() => import('src/pages/home'));
+const IndexPage = lazy(() => import('src/pages/marketing/landing'));
 const SupportPage = lazy(() => import('src/pages/support'));
 
 export const UserListPage = lazy(() => import('../../pages/dashboard/UserListPage'));

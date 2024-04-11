@@ -8,7 +8,7 @@ import { lazy } from 'react';
 const BlogPage = lazy(() => import('src/pages/marketing/posts'));
 const PostPage = lazy(() => import('src/pages/marketing/post'));
 const AboutPage = lazy(() => import('src/pages/marketing/about'));
-const ContactPage = lazy(() => import('src/pages/marketing/contact'));
+// const ContactPage = lazy(() => import('src/pages/marketing/contact'));
 const LandingPage = lazy(() => import('src/pages/marketing/landing'));
 const ServicesPage = lazy(() => import('src/pages/marketing/services'));
 const CaseStudyPage = lazy(() => import('src/pages/marketing/case-study'));
@@ -49,7 +49,7 @@ export const marketingRoutes = [
       { path: 'posts', element: <BlogPage /> },
       { path: 'post', element: <PostPage /> },
       { path: 'about', element: <AboutPage /> },
-      { path: 'contact', element: <ContactPage /> },
+      // { path: 'contact', element: <ContactPage /> },
       { path: 'content', element: <ContentPage /> },
       { path: 'loghome', element: <LoginPage /> },
       { path: 'business', element: <BusinessPage /> },

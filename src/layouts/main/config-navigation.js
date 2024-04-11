@@ -5,17 +5,19 @@ import { paths } from 'src/routes/paths';
 export const pageLinks = [
   {
     order: '1',
-    subheader: 'Marketing',
-    cover: '/assets/images/menu/menu_marketing.jpg',
+    subheader: 'Campaign',
+    cover: '/assets/images/menu/Marketing consulting-pana.png',
     items: [
-      { title: 'Landing', path: paths.marketing.root },
-      { title: 'Services', path: paths.marketing.services },
+      // { title: 'Landing', path: paths.marketing.root },
+      // { title: 'Services', path: paths.marketing.services },
       // { title: 'Case Studies', path: paths.marketing.caseStudies },
       // { title: 'Case Study', path: paths.marketing.caseStudy },
       // { title: 'Blog Posts', path: paths.marketing.posts },
-      { title: 'Blog Post', path: paths.marketing.post },
-      { title: 'About', path: paths.marketing.about },
-      { title: 'Contact', path: paths.marketing.contact },
+      // { title: 'Blog Post', path: paths.marketing.post },
+      // { title: 'About', path: paths.marketing.about },
+      // { title: 'Contact', path: paths.marketing.contact },
+      { title: 'Email Campaign', path: paths.marketing.ecampaign },
+      { title: 'WhatsApp Campaign', path: paths.marketing.wcampaign},
     ],
   },
   // {
@@ -85,36 +87,56 @@ export const pageLinks = [
   // },
   {
     order: '2',
-    subheader: 'Common',
+    // subheader: 'Common',
     items: [
-      { title: 'Login Cover', path: paths.loginCover },
-      { title: 'Login Illustration', path: paths.loginIllustration },
-      { title: 'Login Background', path: paths.loginBackground },
-      { title: 'Register Cover', path: paths.registerCover },
-      { title: 'Register Illustration', path: paths.registerIllustration },
-      { title: 'Register Background', path: paths.registerBackground },
-      { title: 'Forgot Password', path: paths.forgotPassword },
-      { title: 'Verify Code', path: paths.verify },
-      { title: '404 Error', path: paths.page404 },
-      { title: '500 Error', path: paths.page500 },
-      { title: 'Maintenance', path: paths.maintenance },
-      { title: 'ComingSoon', path: paths.comingsoon },
-      { title: 'Pricing 01', path: paths.pricing01 },
-      { title: 'Pricing 02', path: paths.pricing02 },
-      { title: 'Payment', path: paths.payment },
-      { title: 'Support', path: paths.support },
+      // { title: 'Login Cover', path: paths.loginCover },
+      // { title: 'Login Illustration', path: paths.loginIllustration },
+      // { title: 'Login Background', path: paths.loginBackground },
+      // { title: 'Register Cover', path: paths.registerCover },
+      // { title: 'Register Illustration', path: paths.registerIllustration },
+      // { title: 'Register Background', path: paths.registerBackground },
+      // { title: 'Forgot Password', path: paths.forgotPassword },
+      // { title: 'Verify Code', path: paths.verify },
+      // { title: '404 Error', path: paths.page404 },
+      // { title: '500 Error', path: paths.page500 },
+      // { title: 'Maintenance', path: paths.maintenance },
+      // { title: 'ComingSoon', path: paths.comingsoon },
+      // { title: 'Pricing 01', path: paths.pricing01 },
+      // { title: 'Pricing 02', path: paths.pricing02 },
+      // { title: 'Payment', path: paths.payment },
+      // { title: 'Support', path: paths.support },
     ],
   },
 ];
 
-export const navConfig = [
-  { title: 'Home', path: '/' },
-  // { title: 'Components', path: paths.components.root },
-  {
-    title: 'Pages',
-    path: paths.pages,
-    children: [pageLinks[0], pageLinks[1],]
-    //  pageLinks[2], pageLinks[3], pageLinks[4], pageLinks[5]],
-  },
-  // { title: 'Docs', path: paths.docs },
-];
+
+const isLoggedIn = true;
+export const navConfig = isLoggedIn ? [
+  { title: 'HOME', path: paths.marketing.loghome},
+  { title: 'CONTENT LIBRARY', path: paths.marketing.content },
+  { title: 'SOCIAL CONNECT', path: paths.marketing.socialconnect },
+  {title: 'CAMPAIGN',
+    children: [pageLinks[0]]},
+  { title: 'PROFILE', path: paths.marketing.update }, 
+
+] : [
+  { title: 'HOME', path: '/' },
+  { title: 'SERVICES', path: paths.marketing.services }, 
+  { title: 'ABOUT US', path: '/' },
+  { title: 'CONTACT US', path: paths.marketing.contactus },
+];  
+
+// export const navConfig = [
+//   { title: 'HOME', path: '/' },
+//   { title: 'SERVICES', path: paths.marketing.services}, 
+//   { title: 'ABOUT US', path: '/' },
+//   { title: 'CONTACT US', path: paths.marketing.contactus },
+//   // { title: 'Components', path: paths.components.root },
+//   {
+//     title: 'Pages',
+//     path: paths.pages,
+//     children: [pageLinks[0], pageLinks[1],]
+//     //  pageLinks[2], pageLinks[3], pageLinks[4], pageLinks[5]],
+//   },
+//   // { title: 'Docs', path: paths.docs },
+// ];

@@ -61,7 +61,7 @@ export default function NavList({ data }) {
         //
         active={active}
         hasChild={!!data.children}
-        externalLink={data.path.includes('http')}
+        // externalLink={data.path.includes('http')}
       />
 
       {!!data.children && menuOpen.value && (

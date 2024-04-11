@@ -49,6 +49,7 @@ export default function LoginBackgroundView() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
+      await LoginSchema.validate(data, { abortEarly: false });
       await new Promise((resolve) => setTimeout(resolve, 500));
       reset();
       console.log('DATA', data);

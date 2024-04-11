@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import List from '@mui/material/List';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+// import Stack from '@mui/material/Stack';
+// import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 
@@ -57,11 +57,11 @@ export default function NavMobile({ data }) {
             ))}
           </List>
 
-          <Stack spacing={1.5} sx={{ p: 3 }}>
+          {/* <Stack spacing={1.5} sx={{ p: 3 }}>
             <Button fullWidth variant="contained" color="inherit">
               Buy Now
             </Button>
-          </Stack>
+          </Stack> */}
         </Scrollbar>
       </Drawer>
     </>

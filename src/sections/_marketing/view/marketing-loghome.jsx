@@ -28,7 +28,7 @@ export default function MarketingLoghome() {
   const imagesAndLinks = [
     {id:1, imageUrl: '/assets/images/marketing/home1.jpg',name:'Content Calendar',linkUrl:'/marketing/calendar'},
     { id:2,imageUrl: '/assets/images/marketing/home2.jpg',name:'Accounts',linkUrl:'/marketing/socialconnect'  },
-    { id:3,imageUrl: '/assets/images/marketing/home3.jpg',name:'Draft',linkUrl:'/marketing/draft'},
+    { id:3,imageUrl: '/assets/images/marketing/home3.jpg',name:'Draft',linkUrl:'/draft'},
     {id:4, imageUrl: '/assets/images/marketing/home4.jpg', name:'Publishing',linkUrl:'/marketing/content' },
 
     // Add more objects as needed
