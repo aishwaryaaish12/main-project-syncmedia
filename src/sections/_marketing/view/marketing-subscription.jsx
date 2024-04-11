@@ -51,12 +51,12 @@ export default function MarketingSubscriptionView() {
 
       <Card sx={{ width: '400px', height: '530px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', transition: 'box-shadow 0.3s', '&:hover': { boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.2)' }, }}>
         <Box p={3}>
-          <Typography variant="h3" color='primary'>
+          <Typography variant="h3" color='primary' >
             POPULAR
           </Typography>
           <Image src='/assets/icons/pricing/ic_plan_starter03.svg' sx={{ width: '30px', height: '30px', position: 'absolute', top: 30, right: 32 }} />
           <Stack direction="row" alignItems="center" spacing={0.5}>
-            <Typography variant="h4" component="span" sx={{ mt: 3 }}>$100</Typography>
+            <Typography variant="h4" component="span" sx={{ mt: 3,color:'primary.main' }}>$100</Typography>
             <Typography variant="h5" component="span" sx={{ color: 'text.disabled', mt: 3 }}>
               /yearly
             </Typography>

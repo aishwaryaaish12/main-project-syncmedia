@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Box from '@mui/material/Box';
 // import Fab from '@mui/material/Fab';
@@ -9,6 +9,9 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
+
 import { useResponsive } from 'src/hooks/use-responsive';
 
 import { bgGradient } from 'src/theme/css';
@@ -16,24 +19,24 @@ import { bgGradient } from 'src/theme/css';
 import Image from 'src/components/image';
 
 // import Iconify from 'src/components/iconify';
-import MarketingSubscriptionView from '../view/marketing-subscription';
+// import MarketingSubscriptionView from '../view/marketing-subscription';
 // ----------------------------------------------------------------------
 
 export default function MarketingLandingHero() {
   const theme = useTheme();
 
   const mdUp = useResponsive('up', 'md');
-  const [showSubscription, setShowSubscription] = useState(false);
+  // const [showSubscription, setShowSubscription] = useState(false);
 
-  // Function to toggle showing subscription view
-  const handleGetStarted = () => {
-    setShowSubscription(true);
-  };
+  // // Function to toggle showing subscription view
+  // const handleGetStarted = () => {
+  //   setShowSubscription(true);
+  // };
 
-  // Render subscription view if showSubscription is true
-  if (showSubscription) {
-    return <MarketingSubscriptionView />;
-  }
+  // // Render subscription view if showSubscription is true
+  // if (showSubscription) {
+  //   return <MarketingSubscriptionView />;
+  // }
   return (
     <Box
       sx={{
@@ -80,7 +83,7 @@ export default function MarketingLandingHero() {
               justifyContent={{ xs: 'center', md: 'unset' }}
               sx={{ mt: 5 }}
             >
-              <Button variant="contained" color="primary" size="large" onClick={handleGetStarted}>
+              <Button variant="contained" color="primary" size="large" component={RouterLink } to={paths.marketing.subscription}>
                 Get Started
               </Button>
 
