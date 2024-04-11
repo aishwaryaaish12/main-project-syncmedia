@@ -1,21 +1,23 @@
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { useTheme } from '@mui/material/styles';
 
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
+// import { paths } from 'src/routes/paths';
+// import { RouterLink } from 'src/routes/components';
 
 import { useOffSetTop } from 'src/hooks/use-off-set-top';
 
 import { bgBlur } from 'src/theme/css';
 
-import Logo from 'src/components/logo';
+// import Logo from 'src/components/logo';
+
+import Typography from '@mui/material/Typography';
 
 import { HEADER } from '../config-layout';
 import HeaderShadow from './header-shadow';
-import SettingsButton from './settings-button';
+// import SettingsButton from './settings-button';
 
 // ----------------------------------------------------------------------
 
@@ -46,7 +48,8 @@ export default function HeaderSimple() {
           }),
         }}
       >
-        <Logo />
+        {/* <Logo /> */}
+        <Typography variant='h4' fontStyle='initial'>SyncMedia Hub</Typography>
 
         <Stack
           spacing={1}
@@ -55,16 +58,16 @@ export default function HeaderSimple() {
           alignItems="center"
           justifyContent="flex-end"
         >
-          <SettingsButton />
+          {/* <SettingsButton /> */}
 
-          <Link
+          {/* <Link
             href={paths.support}
             component={RouterLink}
             color="inherit"
             sx={{ typography: 'subtitle2' }}
           >
             Need help?
-          </Link>
+          </Link> */}
         </Stack>
       </Toolbar>
 

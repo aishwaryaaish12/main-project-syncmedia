@@ -113,10 +113,10 @@ export const pageLinks = [
 const isLoggedIn = true;
 export const navConfig = isLoggedIn ? [
   { title: 'HOME', path: paths.marketing.loghome},
-  { title: 'CONTENT LIBRARY', path: paths.marketing.content },
+  { title: 'BUSINESS', path: paths.marketing.business},
   { title: 'SOCIAL CONNECT', path: paths.marketing.socialconnect },
-  {title: 'CAMPAIGN',
-    children: [pageLinks[0]]},
+  { title: 'CONTENT LIBRARY', path: paths.marketing.content }, 
+  { title: 'CAMPAIGN', children: [pageLinks[0]]},
   { title: 'PROFILE', path: paths.marketing.update }, 
 
 ] : [

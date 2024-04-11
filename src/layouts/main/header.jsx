@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
-// import Link from '@mui/material/Link';
+//  import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 // import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography'
 
 // import { paths } from 'src/routes/paths';
 
@@ -17,7 +18,7 @@ import { useOffSetTop } from 'src/hooks/use-off-set-top';
 import { bgBlur } from 'src/theme/css';
 
 // import Logo from 'src/components/logo';
-// import Label from 'src/components/label';
+//  import Label from 'src/components/label';
 
 import NavMobile from './nav/mobile';
 import NavDesktop from './nav/desktop';
@@ -40,6 +41,7 @@ export default function Header({ headerOnDark }) {
     <>
       <Box sx={{ lineHeight: 0, position: 'relative' }}>
         {/* <Logo /> */}
+        <Typography variant='h4' fontStyle='initial'>SyncMedia Hub</Typography>
         
 
         {/* <Link href="https://zone-docs.vercel.app/changelog" target="_blank" rel="noopener">
